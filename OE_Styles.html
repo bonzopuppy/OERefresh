@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Events Style Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'oe': {
+                            50: '#f4f7f1',
+                            100: '#e8efe2',
+                            200: '#d2e0c5',
+                            300: '#bcd1a8',
+                            400: '#a6c28b',
+                            500: '#7cb518',
+                            600: '#649414',
+                            700: '#507410',
+                            800: '#3c570c',
+                            900: '#283a08'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .color-box {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="p-12">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl font-[200] mb-16">Olive Events Style Guide</h1>
+
+        <!-- SECTION 1: DESIGN FUNDAMENTALS -->
+        <section class="mb-32">
+            <h2 class="text-2xl font-[200] mb-12">Design Fundamentals</h2>
+
+            <!-- Colors -->
+            <div class="mb-20">
+                <h3 class="text-xl font-[200] mb-8">Colors</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                    <div>
+                        <div class="color-box bg-oe-50"></div>
+                        <p class="mt-2 font-mono text-sm">OE-50</p>
+                        <p class="font-mono text-sm text-gray-600">#f4f7f1</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-100"></div>
+                        <p class="mt-2 font-mono text-sm">OE-100</p>
+                        <p class="font-mono text-sm text-gray-600">#e8efe2</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-200"></div>
+                        <p class="mt-2 font-mono text-sm">OE-200</p>
+                        <p class="font-mono text-sm text-gray-600">#d2e0c5</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-300"></div>
+                        <p class="mt-2 font-mono text-sm">OE-300</p>
+                        <p class="font-mono text-sm text-gray-600">#bcd1a8</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-400"></div>
+                        <p class="mt-2 font-mono text-sm">OE-400</p>
+                        <p class="font-mono text-sm text-gray-600">#a6c28b</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-500"></div>
+                        <p class="mt-2 font-mono text-sm">OE-500 (Primary)</p>
+                        <p class="font-mono text-sm text-gray-600">#7cb518</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-600"></div>
+                        <p class="mt-2 font-mono text-sm">OE-600</p>
+                        <p class="font-mono text-sm text-gray-600">#649414</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-700"></div>
+                        <p class="mt-2 font-mono text-sm">OE-700</p>
+                        <p class="font-mono text-sm text-gray-600">#507410</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-800 text-white"></div>
+                        <p class="mt-2 font-mono text-sm">OE-800</p>
+                        <p class="font-mono text-sm text-gray-600">#3c570c</p>
+                    </div>
+                    <div>
+                        <div class="color-box bg-oe-900 text-white"></div>
+                        <p class="mt-2 font-mono text-sm">OE-900</p>
+                        <p class="font-mono text-sm text-gray-600">#283a08</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <div class="mb-20">
+                <h3 class="text-xl font-[200] mb-8">Typography</h3>
+                
+                <!-- Text on White -->
+                <div class="mb-12">
+                    <h4 class="text-lg font-[200] mb-4">Text on White Background</h4>
+                    <div class="p-8 border rounded-lg space-y-8">
+                        <!-- Section Headers -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Section Header</p>
+                            <p class="text-sm uppercase tracking-widest mb-4 text-oe-700 font-[200]">EVENT PRODUCTION</p>
+                            <p class="text-xs text-gray-500">Class: text-sm uppercase tracking-widest mb-4 text-oe-700 font-[200]</p>
+                        </div>
+
+                        <!-- Headlines -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Headline</p>
+                            <h2 class="text-3xl md:text-4xl font-[200] text-black">Main Headline Text</h2>
+                            <p class="text-xs text-gray-500">Class: text-3xl md:text-4xl font-[200] text-black</p>
+                        </div>
+
+                        <!-- Body Copy -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Body Copy</p>
+                            <p class="font-[300]">Standard paragraph text</p>
+                            <p class="text-xs text-gray-500">Class: font-[300]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text on Shaded -->
+                <div class="mb-12">
+                    <h4 class="text-lg font-[200] mb-4">Text on Shaded Background</h4>
+                    <div class="p-8 bg-oe-50 rounded-lg space-y-8">
+                        <!-- Section Headers -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Section Header</p>
+                            <p class="text-sm uppercase tracking-widest mb-4 text-oe-900 font-[200]">ABOUT OLIVE EVENTS</p>
+                            <p class="text-xs text-gray-500">Class: text-sm uppercase tracking-widest text-oe-900 font-[200]</p>
+                        </div>
+
+                        <!-- Headlines -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Headline</p>
+                            <h2 class="text-3xl md:text-4xl font-[200] text-oe-900">Shaded Background Headline</h2>
+                            <p class="text-xs text-gray-500">Class: text-3xl md:text-4xl font-[200] text-oe-900</p>
+                        </div>
+
+                        <!-- Body Copy -->
+                        <div>
+                            <p class="text-sm text-gray-600 mb-2">Body Copy</p>
+                            <p class="text-oe-900 font-[300]">Standard paragraph text on shaded background</p>
+                            <p class="text-xs text-gray-500">Class: text-oe-900 font-[300]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: UI COMPONENTS -->
+        <section class="mb-32">
+            <h2 class="text-2xl font-[200] mb-12">UI Components</h2>
+
+            <!-- Service Card -->
+            <div class="mb-20">
+                <h3 class="text-xl font-[200] mb-8">Service Card</h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Example Card -->
+                    <div class="bg-oe-50 rounded-lg p-8">
+                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
+                            <i class="fas fa-map-marked-alt text-xl text-oe-400"></i>
+                        </div>
+                        <h3 class="text-xl mb-4 text-oe-900 font-[200]">Card Headline</h3>
+                        <p class="text-oe-900 mb-6 leading-relaxed font-[300]">Card description text goes here.</p>
+                        <ul class="space-y-3 text-oe-900 font-[300]">
+                            <li class="flex items-start">
+                                <i class="fas fa-check mt-1 mr-3 text-sm"></i>
+                                <span>List item text</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Component Breakdown -->
+                    <div class="space-y-4">
+                        <p class="text-sm font-medium">Component Elements:</p>
+                        <ul class="text-sm space-y-2">
+                            <li><span class="text-gray-600">Container:</span> bg-oe-50 rounded-lg p-8</li>
+                            <li><span class="text-gray-600">Icon Container:</span> w-12 h-12 rounded-full bg-oe-100</li>
+                            <li><span class="text-gray-600">Icon:</span> text-xl text-oe-400</li>
+                            <li><span class="text-gray-600">Headline:</span> text-xl text-oe-900 font-[200]</li>
+                            <li><span class="text-gray-600">Description:</span> text-oe-900 font-[300]</li>
+                            <li><span class="text-gray-600">List:</span> space-y-3 text-oe-900 font-[300]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Card -->
+            <div class="mb-20">
+                <h3 class="text-xl font-[200] mb-8">Feature Card</h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Example Card -->
+                    <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
+                        <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
+                            <i class="fas fa-chalkboard-teacher text-4xl text-oe-400 opacity-30"></i>
+                        </div>
+                    </div>
+                    <!-- Component Breakdown -->
+                    <div class="space-y-4">
+                        <p class="text-sm font-medium">Component Elements:</p>
+                        <ul class="text-sm space-y-2">
+                            <li><span class="text-gray-600">Container:</span> bg-oe-50 p-2 rounded-lg aspect-[4/3]</li>
+                            <li><span class="text-gray-600">Inner Container:</span> bg-oe-100 rounded</li>
+                            <li><span class="text-gray-600">Icon:</span> text-4xl text-oe-400 opacity-30</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Card -->
+            <div class="mb-20">
+                <h3 class="text-xl font-[200] mb-8">Process Card</h3>
+                <div class="grid grid-cols-2 gap-8">
+                    <!-- Example Card -->
+                    <div class="numbered-item bg-oe-50 p-8 rounded-lg" data-number="01">
+                        <div class="relative z-10">
+                            <h3 class="text-xl mb-4 mt-6 text-oe-900 font-[200]">Process Step</h3>
+                            <p class="text-oe-900 leading-relaxed font-[300]">Process description text.</p>
+                        </div>
+                    </div>
+                    <!-- Component Breakdown -->
+                    <div class="space-y-4">
+                        <p class="text-sm font-medium">Component Elements:</p>
+                        <ul class="text-sm space-y-2">
+                            <li><span class="text-gray-600">Container:</span> bg-oe-50 p-8 rounded-lg</li>
+                            <li><span class="text-gray-600">Number:</span> data-number attribute</li>
+                            <li><span class="text-gray-600">Headline:</span> text-xl text-oe-900 font-[200]</li>
+                            <li><span class="text-gray-600">Description:</span> text-oe-900 font-[300]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more components as needed -->
+
+        </section>
+    </div>
+</body>
+</html> 
