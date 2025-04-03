@@ -310,9 +310,14 @@
             color: inherit;
         }
         
-        /* Remove any other potential color conflicts */
+        /* Update the text-oe-500 color override to use the correct brand color */
         .text-oe-500 {
-            color: #8f9768 !important;
+            color: #7cb518 !important;
+        }
+
+        /* Remove the conflicting color override */
+        .text-oe-400 {
+            color: #7cb518;  /* Update from #a6c28b to primary brand color */
         }
 
         /* Add this specific style */
@@ -444,13 +449,13 @@
                 </div>
                 
                 <!-- Using the Planning + Execution section layout for Meet Allison -->
-                <div class="bg-oe-50 rounded-lg p-12 md:p-16">
+                <div class="bg-gray-50 rounded-lg p-12 md:p-16">
                     <div class="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h2 class="text-3xl md:text-4xl font-[200] text-oe-900 mb-8">
+                            <h2 class="text-3xl md:text-4xl font-[200] text-black mb-8">
                                 Meet Allison
                             </h2>
-                            <p class="text-oe-900 font-[300] leading-relaxed mb-6">
+                            <p class="text-black font-[300] leading-relaxed mb-6">
                                 With over 15 years of experience in corporate event planning, Allison brings creativity, precision, and a passion for perfection to every event. Her background in hospitality and marketing provides a unique perspective that enables her to craft events that are not only logistically flawless but also strategically aligned with her clients' goals.
                             </p>
                         </div>
@@ -476,13 +481,13 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
                     <!-- Cards for each service -->
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-map-marked-alt text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-map-marked-alt text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Destination Research</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">We find the perfect location that aligns with your objectives, corporate culture, and budget.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Destination Research</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">We find the perfect location that aligns with your objectives, corporate culture, and budget.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>Curated location selection</span>
@@ -494,13 +499,13 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-plane text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-plane text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Travel Management</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">Seamless coordination of all travel logistics for a stress-free journey from start to finish.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Travel Management</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">Seamless coordination of all travel logistics for a stress-free journey from start to finish.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>End-to-end coordination</span>
@@ -512,13 +517,13 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-file-contract text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-file-contract text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Venue Management</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">Expert negotiation and management of venue contracts to secure optimal terms and spaces.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Venue Management</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">Expert negotiation and management of venue contracts to secure optimal terms and spaces.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>Favorable terms and rates</span>
@@ -530,13 +535,13 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-utensils text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-utensils text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Catering + Dining</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">Thoughtfully curated dining experiences that accommodate all preferences and dietary needs.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Catering + Dining</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">Thoughtfully curated dining experiences that accommodate all preferences and dietary needs.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>Custom menu curation</span>
@@ -548,13 +553,13 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-users text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-users text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Team Building</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">Engaging activities designed to strengthen team bonds and align with your company culture.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Team Building</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">Engaging activities designed to strengthen team bonds and align with your company culture.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>Custom-designed activities</span>
@@ -566,13 +571,13 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-oe-50 rounded-lg p-8">
-                        <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                            <i class="fas fa-clipboard-check text-xl text-oe-400"></i>
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <div class="w-12 h-12 flex items-center justify-center mb-6">
+                            <i class="fas fa-clipboard-check text-2xl" style="color: #6e7c57"></i>
                         </div>
-                        <h3 class="font-serif text-xl mb-4 text-oe-700">Onsite Execution</h3>
-                        <p class="text-oe-900 mb-6 leading-relaxed">Professional staff ensuring flawless execution of every detail from start to finish.</p>
-                        <ul class="space-y-3 text-oe-900">
+                        <h3 class="text-xl mb-4 text-black font-[200]">Onsite Execution</h3>
+                        <p class="text-black font-[300] mb-6 leading-relaxed">Professional staff ensuring flawless execution of every detail from start to finish.</p>
+                        <ul class="space-y-3 text-black font-[300]">
                             <li class="flex items-start">
                                 <i class="fas fa-check mt-1 mr-3 text-sm"></i>
                                 <span>Professional management</span>
@@ -926,19 +931,19 @@
                     <h3 class="text-xl font-serif font-medium mb-8">Connect With Us</h3>
                     <div class="flex space-x-6 md:justify-end">
                         <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-instagram text-oe-400"></i>
+                            <i class="fab fa-instagram text-[#7cb518]"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
                         <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-linkedin text-oe-400"></i>
+                            <i class="fab fa-linkedin text-[#7cb518]"></i>
                             <span class="sr-only">LinkedIn</span>
                         </a>
                         <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-twitter text-oe-400"></i>
+                            <i class="fab fa-twitter text-[#7cb518]"></i>
                             <span class="sr-only">Twitter</span>
                         </a>
                         <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-pinterest text-oe-400"></i>
+                            <i class="fab fa-pinterest text-[#7cb518]"></i>
                             <span class="sr-only">Pinterest</span>
                         </a>
                     </div>
