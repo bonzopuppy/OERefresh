@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            50:  '#f4f7f1',
+                            100: '#e8efe2',
+                            200: '#bcd1a8',
+                            500: '#729932',
+                            700: '#3c570c',
+                            900: '#283a08',
+                        },
+                    },
+                    fontFamily: {
+                        sans:    ['"Instrument Sans"', 'sans-serif'],
+                        display: ['"Instrument Serif"', 'serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            color: #283a08;
+            background: #ffffff;
+            font-feature-settings: 'ss01';
+        }
+    </style>
+</head>
+<body class="font-sans text-olive-900">
+
+    <!-- ============= HEADER ============= -->
+    <header class="sticky top-0 z-50 bg-white h-[88px] flex items-center px-10 border-b border-transparent">
+        <nav class="flex items-center gap-8 text-[16px] font-medium">
+            <a href="#about" class="hover:text-olive-700 transition-colors">About</a>
+            <a href="#corporate" class="hover:text-olive-700 transition-colors">Corporate Retreats</a>
+            <a href="#production" class="hover:text-olive-700 transition-colors">Event Production</a>
+        </nav>
+        <a href="#" class="absolute left-1/2 -translate-x-1/2 flex items-center">
+            <img src="images/olive-events-logo.png?v=2" alt="Olive Events" class="h-[64px] w-auto object-contain">
+        </a>
+        <nav class="flex items-center gap-8 ml-auto text-[16px] font-medium">
+            <a href="#venue" class="hover:text-olive-700 transition-colors">Venue Consulting</a>
+            <a href="#clients" class="hover:text-olive-700 transition-colors">Past Clients</a>
+            <a href="#contact" class="hover:text-olive-700 transition-colors">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ============= HERO ============= -->
+    <section class="relative h-[750px] overflow-hidden">
+        <img src="https://www.figma.com/api/mcp/asset/2df7a1e2-cada-49ae-9f65-8baa23a34f25" alt="" class="absolute inset-0 w-full h-full object-cover" style="object-position: 50% 70%;">
+        <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.32);"></div>
+        <div class="relative h-full flex items-center justify-center px-10">
+            <h1 class="text-white text-center text-[40px] md:text-[48px] leading-[1.25] max-w-[1001px] -mt-12">
+                <span class="font-normal">Imagine events that don't just showcase your unique brand,</span>
+                <span class="font-semibold"> but set a new standard.</span>
+            </h1>
+        </div>
+        <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-white text-[16px] font-medium">
+            <img src="https://www.figma.com/api/mcp/asset/ed4eb580-d21e-40c7-8a17-08b3da80ba5f" alt="" class="w-4 h-4">
+            <span>Fiorella Event Styling</span>
+        </div>
+    </section>
+
+    <!-- ============= ABOUT ============= -->
+    <section id="about" class="pt-[120px] pb-[100px] px-10">
+        <div class="max-w-[1130px] mx-auto text-center">
+            <p class="text-olive-500 text-[20px] font-medium mb-6">About Olive Events</p>
+            <h2 class="text-olive-900 text-[36px] md:text-[48px] leading-[1.25]">
+                <span class="font-normal">At Olive Events, we believe in the power of thoughtfully planned events </span><span class="font-medium">to connect people, inspire teams, and elevate brands</span><span class="font-normal">.</span>
+            </h2>
+        </div>
+    </section>
+    <div class="max-w-[1360px] mx-auto h-px bg-olive-200"></div>
+
+    <!-- ============= MEET ALLISON ============= -->
+    <section class="py-[100px] px-10">
+        <div class="max-w-[1360px] mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
+            <div class="relative aspect-[577/674] overflow-hidden">
+                <img src="https://www.figma.com/api/mcp/asset/31bff82c-4228-4a3f-bdb4-0c54ef2fbb9e" alt="Allison" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            </div>
+            <div class="flex flex-col justify-between min-h-[674px]">
+                <h2 class="text-[36px] md:text-[48px] font-normal pt-4">Meet Allison</h2>
+                <p class="text-[20px] font-medium leading-[1.5] max-w-[668px] pb-2">
+                    With over 15 years of experience in corporate event planning, Allison brings creativity, precision, and a passion for perfection to every event. Her background in hospitality and marketing provides a unique perspective that enables her to craft events that are not only logistically flawless but also strategically aligned with her clients' goals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS ORLANDO ============= -->
+    <section class="px-0 lg:px-10 py-[100px]">
+        <div class="relative max-w-[1360px] mx-auto h-[500px] md:h-[700px] lg:h-[850px] overflow-hidden">
+            <img src="https://www.figma.com/api/mcp/asset/eb1181e9-edf3-450d-932b-d2cc74e01b6c" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-white text-[16px] font-medium">
+                <img src="https://www.figma.com/api/mcp/asset/ed4eb580-d21e-40c7-8a17-08b3da80ba5f" alt="" class="w-4 h-4">
+                <span>Digits Orlando</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= CORPORATE RETREATS ============= -->
+    <section id="corporate" class="py-[100px] px-10">
+        <div class="max-w-[1360px] mx-auto grid md:grid-cols-2 gap-12 mb-8">
+            <h2 class="text-[36px] md:text-[48px] font-normal leading-[1.25] max-w-[553px]">Corporate Retreats</h2>
+            <p class="text-[20px] font-medium leading-[1.5] max-w-[553px] md:self-end">We create immersive retreats that inspire collaboration and build team cohesion.</p>
+        </div>
+        <div class="max-w-[1360px] mx-auto h-px bg-olive-200"></div>
+
+        <div class="max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-x-6 gap-y-8">
+            <!-- Card 1: Destination Research -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden">
+                    <img src="https://www.figma.com/api/mcp/asset/7a40f938-c975-4f4c-83ed-ef1d9593d85a" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/d7113cd2-c333-4a43-ac38-1e63cf26e5e4" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] md:text-[32px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Destination Research</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">We find the perfect location that aligns with your objectives, corporate culture, and budget.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Curated location selection</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Detailed recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Travel Management -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden">
+                    <img src="https://www.figma.com/api/mcp/asset/58b0d23c-ac18-439d-951e-72c16051ef3c" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/82988727-ce34-4d35-80a2-0261faf4d558" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Travel Management</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">Seamless coordination of all travel logistics for a stress-free journey from start to finish.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>End-to-end coordination</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Personalized transportation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Venue Management -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden relative">
+                    <img src="https://www.figma.com/api/mcp/asset/460cf893-6e78-49d1-887b-47163aa5d51c" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/4e2d6155-77a2-455c-a3f9-19f9f351c468" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Venue Management</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">Expert negotiation and management of venue contracts to secure optimal terms and spaces.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Favorable terms and rates</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Space management</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4: Catering + Dining -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden">
+                    <img src="https://www.figma.com/api/mcp/asset/99384766-e672-4ba8-8d79-cdc0b764292c" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/39dc15a5-98c4-4029-bc56-e6980b16cbe2" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] md:text-[32px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Catering + Dining</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">Thoughtfully curated dining experiences that accommodate all preferences and dietary needs.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Custom menu curation</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Unique dining experiences</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 5: Team Building -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden">
+                    <img src="https://www.figma.com/api/mcp/asset/5deee61f-a38a-4087-a024-c5483fcad23c" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/990e7113-0608-4a1d-a3b7-5d725436319d" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Team Building</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">Engaging activities designed to strengthen team bonds and align with your company culture.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Custom-designed activities</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Memorable entertainment</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 6: Onsite Execution -->
+            <div class="border-b border-olive-200 pb-[60px]">
+                <div class="aspect-square overflow-hidden relative">
+                    <img src="https://www.figma.com/api/mcp/asset/3d970852-22ef-4f08-8e33-c72fb16211da" alt="" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+                </div>
+                <div class="px-8 pt-10">
+                    <img src="https://www.figma.com/api/mcp/asset/06a7a757-6528-4b0d-b117-e17fdc3f695a" alt="" class="w-10 h-10 mb-4">
+                    <h3 class="text-[28px] font-semibold leading-[1.25] mb-4 max-w-[373px]">Onsite Execution</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[373px] mb-4">Professional staff ensuring flawless execution of every detail from start to finish.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Professional management</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-[20px] font-medium">
+                            <img src="https://www.figma.com/api/mcp/asset/db5181ee-1e3c-4738-a602-f0b5ca65a3a6" alt="" class="w-4 h-4">
+                            <span>Real-time problem solving</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS QBC ============= -->
+    <section class="py-[100px] px-0 lg:px-10">
+        <div class="relative max-w-[1360px] mx-auto h-[500px] md:h-[700px] lg:h-[850px] overflow-hidden">
+            <img src="https://www.figma.com/api/mcp/asset/79f205f8-571c-43b3-a498-c13233df43c3" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-white text-[16px] font-medium">
+                <img src="https://www.figma.com/api/mcp/asset/ed4eb580-d21e-40c7-8a17-08b3da80ba5f" alt="" class="w-4 h-4">
+                <span>Digits QBC</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= EVENT PRODUCTION ============= -->
+    <section id="production" class="py-[100px] px-10">
+        <div class="max-w-[1360px] mx-auto grid md:grid-cols-2 gap-12 mb-8">
+            <h2 class="text-[36px] md:text-[48px] font-normal leading-[1.25] max-w-[553px]">Event Production</h2>
+            <p class="text-[20px] font-medium leading-[1.5] max-w-[553px] md:self-end">We produce flawless corporate events that align with your brand and engage your audience.</p>
+        </div>
+        <div class="max-w-[1360px] mx-auto h-px bg-olive-200 mb-10"></div>
+
+        <div class="max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-[60px]">
+            <div class="flex items-center gap-12">
+                <img src="https://www.figma.com/api/mcp/asset/992f5460-3eaf-4498-a96e-a8b6b24b6f71" alt="" class="w-[80px] h-[98px] flex-shrink-0">
+                <div class="flex flex-col gap-4 text-olive-700">
+                    <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25]">Conferences + Trade Shows</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[540px]">Seamless coordination of complex multi-day events with engaging experiences for all attendees.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-12">
+                <img src="https://www.figma.com/api/mcp/asset/e8084f8c-f759-4743-8bb8-af67210ebcae" alt="" class="w-[80px] h-[98px] flex-shrink-0">
+                <div class="flex flex-col gap-4 text-olive-700">
+                    <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25]">Product Launches</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[540px]">Strategic event design to create maximum impact for your new product or service.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-12">
+                <img src="https://www.figma.com/api/mcp/asset/5ce9e119-d069-4403-9f5f-063f91f4067e" alt="" class="w-[80px] h-[98px] flex-shrink-0">
+                <div class="flex flex-col gap-4 text-olive-700">
+                    <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25]">Ancillary Conference Events</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[540px]">Distinctive receptions and networking sessions that complement your main conference.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-12">
+                <img src="https://www.figma.com/api/mcp/asset/b6695fcf-3869-45fc-9f19-b984ed1a3533" alt="" class="w-[80px] h-[98px] flex-shrink-0">
+                <div class="flex flex-col gap-4 text-olive-700">
+                    <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25]">Holiday Celebrations</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[540px]">Festive and creative company celebrations that show appreciation and build team camaraderie.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-12">
+                <img src="https://www.figma.com/api/mcp/asset/3312d76d-f7ff-4e79-a0ef-d494c88d6bc9" alt="" class="w-[80px] h-[98px] flex-shrink-0">
+                <div class="flex flex-col gap-4 text-olive-700">
+                    <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25]">Board Meetings + Dinners</h3>
+                    <p class="text-[20px] font-medium leading-[1.5] max-w-[540px]">Polished, professional events with impeccable service for your most important stakeholders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS NETWORKING ============= -->
+    <section class="py-[100px] px-0 lg:px-10">
+        <div class="relative max-w-[1360px] mx-auto h-[500px] md:h-[700px] lg:h-[850px] overflow-hidden">
+            <img src="https://www.figma.com/api/mcp/asset/1d5b13f4-8f92-4e38-874e-8ee3484c2703" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-white text-[16px] font-medium">
+                <img src="https://www.figma.com/api/mcp/asset/ed4eb580-d21e-40c7-8a17-08b3da80ba5f" alt="" class="w-4 h-4">
+                <span>Digits Networking</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= VENUE CONSULTING ============= -->
+    <section id="venue" class="py-[100px] px-10">
+        <div class="max-w-[1360px] mx-auto grid md:grid-cols-2 gap-12 mb-10">
+            <h2 class="text-[36px] md:text-[48px] font-normal leading-[1.25] max-w-[553px]">Venue Consulting</h2>
+            <div class="md:self-end">
+                <p class="text-[20px] font-medium leading-[1.5] max-w-[553px] mb-6">We help venues maximize their potential with strategic marketing and showcase events.</p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-olive-700 text-[24px] font-semibold underline decoration-solid">
+                    Request a Consultation
+                    <img src="https://www.figma.com/api/mcp/asset/e4a8f447-98ce-40b5-9919-8745be46035f" alt="" class="w-6 h-6">
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-[1360px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 mt-[80px]">
+            <div class="border-t border-olive-200 pt-10 px-10 min-h-[400px]">
+                <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25] mb-[120px] max-w-[331px]">Venue Styling<br>+ Photography</h3>
+                <p class="text-[20px] font-medium leading-[1.25] max-w-[357px]">Professional styling and photography services to showcase your venue's unique features and possibilities.</p>
+            </div>
+            <div class="border-t border-olive-200 pt-10 px-10 min-h-[400px]">
+                <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25] mb-[120px] max-w-[331px]">Sales Deck Development</h3>
+                <p class="text-[20px] font-medium leading-[1.25] max-w-[357px]">Compelling, professionally designed sales materials that effectively communicate your venue's value proposition.</p>
+            </div>
+            <div class="border-t border-olive-200 pt-10 px-10 min-h-[400px]">
+                <h3 class="text-[28px] md:text-[32px] font-medium leading-[1.25] mb-[120px] max-w-[331px]">Event Planner Showcase</h3>
+                <p class="text-[20px] font-medium leading-[1.25] max-w-[357px]">Strategic events that bring decision-makers to your venue and showcase its capabilities in real-time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: CRASHLYTICS + TWITTER ============= -->
+    <section class="py-[100px] px-0 lg:px-10">
+        <div class="relative max-w-[1360px] mx-auto h-[500px] md:h-[700px] lg:h-[850px] overflow-hidden">
+            <img src="https://www.figma.com/api/mcp/asset/c8e4bc32-2200-4d46-9cb4-e7a97f3df454" alt="" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-white text-[16px] font-medium">
+                <img src="https://www.figma.com/api/mcp/asset/ed4eb580-d21e-40c7-8a17-08b3da80ba5f" alt="" class="w-4 h-4">
+                <span>Crashlytics + Twitter</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= PAST CLIENTS ============= -->
+    <section id="clients" class="py-[100px] px-10">
+        <div class="max-w-[1360px] mx-auto flex flex-wrap items-center justify-center gap-x-20 gap-y-12">
+            <img src="https://www.figma.com/api/mcp/asset/f13f23c9-f41f-4a87-aa44-2bf49cc352f7" alt="Digits" class="w-[207px] h-[58px] object-contain flex-shrink-0">
+            <img src="https://www.figma.com/api/mcp/asset/0c19c839-d9d5-4f8e-8f9b-3e72c497f260" alt="Google Cloud" class="w-[207px] h-[37px] object-contain flex-shrink-0">
+            <img src="https://www.figma.com/api/mcp/asset/26c6e054-0372-489b-bcea-246046852877" alt="Okta" class="w-[207px] h-[68px] object-contain flex-shrink-0">
+            <img src="https://www.figma.com/api/mcp/asset/47cadd36-0bc8-4864-9110-6d6dfd0fc8fa" alt="Roblox" class="w-[207px] h-[38px] object-contain flex-shrink-0">
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <img src="https://www.figma.com/api/mcp/asset/1ec0d67d-895f-41fb-a24a-8a6e7d5ecf7c" alt="" class="w-[66px] h-[46px] object-contain">
+                <img src="https://www.figma.com/api/mcp/asset/30749d69-c6c3-4ff3-a329-5da56b320ce9" alt="YouTube" class="w-[134px] h-[41px] object-contain">
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="max-w-[1360px] mx-auto grid md:grid-cols-2 gap-0 mt-[100px]">
+            <div class="border-t border-olive-200 pt-8 px-8 min-h-[437px] flex flex-col text-olive-700">
+                <p class="font-display text-[64px] leading-none mb-2">&ldquo;</p>
+                <p class="text-[24px] font-medium leading-[1.25] max-w-[587px] mb-auto">Olive Events transformed our corporate retreat from a standard team gathering to an unforgettable experience that our employees still talk about months later.&rdquo;</p>
+                <div class="mt-12">
+                    <p class="text-[24px] font-semibold leading-[1.25]">Sarah Johnson</p>
+                    <p class="text-[24px] font-medium leading-[1.25] mt-2">Chief People Officer, Digits</p>
+                </div>
+            </div>
+            <div class="border-t border-olive-200 pt-8 px-8 min-h-[437px] flex flex-col text-olive-700">
+                <p class="font-display text-[64px] leading-none mb-2">&ldquo;</p>
+                <p class="text-[24px] font-medium leading-[1.25] max-w-[587px] mb-auto">Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                <div class="mt-12">
+                    <p class="text-[24px] font-semibold leading-[1.25]">Dave Baden</p>
+                    <p class="text-[24px] font-medium leading-[1.25] mt-2">Founder, Show.Me</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK 2: CRASHLYTICS + TWITTER (light) ============= -->
+    <section class="py-[100px] px-0 lg:px-10">
+        <div class="relative max-w-[1360px] mx-auto h-[500px] md:h-[700px] lg:h-[850px] overflow-hidden">
+            <img src="https://www.figma.com/api/mcp/asset/0da7a644-bca9-4a31-a9a6-c3902aadc158" alt="" class="absolute h-full top-0 object-cover" style="left: 30.33%; width: 39.35%;">
+            <div class="absolute inset-0" style="background-color: rgba(40, 58, 8, 0.08);"></div>
+            <div class="absolute bottom-[60px] left-12 flex items-center gap-2 text-olive-700 text-[16px] font-medium">
+                <img src="https://www.figma.com/api/mcp/asset/625ce08f-3e30-4d59-89cd-cdfcbb82900c" alt="" class="w-4 h-4">
+                <span>Crashlytics + Twitter</span>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
