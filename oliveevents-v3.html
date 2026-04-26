@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olive Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F2EDE0',
+                        ink:   '#2A2A26',
+                        olive: '#6B8347',
+                        sage:  '#A8B89D',
+                        clay:  '#C97A5C',
+                    },
+                    fontFamily: {
+                        sans: ['"Instrument Sans"', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            color: #2A2A26;
+            background: #F2EDE0;
+        }
+        .vrule { background-color: #6B8347; width: 1px; }
+    </style>
+</head>
+<body class="font-sans text-ink bg-cream">
+
+    <!-- ============= HEADER ============= -->
+    <header class="sticky top-0 z-50 bg-cream h-[96px] flex items-center px-10 border-b border-olive">
+        <button class="w-12 h-12 flex items-center justify-center text-olive" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="w-7 h-7">
+                <path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/>
+            </svg>
+        </button>
+        <a href="#" class="absolute left-1/2 -translate-x-1/2 flex items-center">
+            <img src="images/olive-events-logo.svg" alt="Olive Events" class="h-[64px] w-auto object-contain">
+        </a>
+        <a href="#contact" class="ml-auto text-olive text-[20px] font-medium hover:text-clay transition-colors">Contact</a>
+    </header>
+
+    <!-- ============= HERO HEADLINE ============= -->
+    <section class="pt-[100px] pb-[80px] px-10">
+        <div class="max-w-[1100px] mx-auto text-center">
+            <h1 class="text-olive text-[32px] md:text-[40px] leading-[1.25]" style="text-wrap: balance;">
+                <span class="font-normal block">Imagine events that don't just showcase your unique brand,</span>
+                <span class="font-medium block mt-2">but set a new standard.</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- ============= HERO IMAGE (CAROUSEL) ============= -->
+    <section class="relative h-[750px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/2df7a1e2-cada-49ae-9f65-8baa23a34f25" alt="" class="absolute inset-0 w-full h-full object-cover" style="object-position: 50% 70%;">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-cream text-[20px] font-medium">Fiorella Event Styling (1/5)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= ABOUT + MEET ALLISON ============= -->
+    <section id="about" class="pt-[120px] pb-[120px] px-10">
+        <div class="max-w-[1360px] mx-auto">
+            <!-- About statement, narrow -->
+            <div class="max-w-[600px] mx-auto md:mx-0 md:ml-[16.67%] mb-[100px]">
+                <p class="text-olive text-[28px] md:text-[36px] font-medium leading-[1.4]" style="text-wrap: balance;">
+                    At Olive Events, we believe in the power of thoughtfully planned events to connect people, inspire teams, and elevate brands.
+                </p>
+            </div>
+
+            <!-- Meet Allison: image + heading + bio -->
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <div class="relative aspect-[553/396] overflow-hidden border border-olive">
+                    <img src="https://www.figma.com/api/mcp/asset/31bff82c-4228-4a3f-bdb4-0c54ef2fbb9e" alt="Allison" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1]">Meet Allison</h2>
+                    <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">
+                        With over 15 years of experience in corporate event planning, Allison brings creativity, precision, and a passion for perfection to every event. Her background in hospitality and marketing provides a unique perspective that enables her to craft events that are not only logistically flawless but also strategically aligned with her clients' goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS ORLANDO ============= -->
+    <section class="relative h-[850px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/eb1181e9-edf3-450d-932b-d2cc74e01b6c" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-cream text-[20px] font-medium">Digits Orlando (3/6)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= CORPORATE RETREATS ============= -->
+    <section id="corporate" class="py-[120px] px-10">
+        <div class="max-w-[1360px] mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 mb-[80px]">
+                <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1] max-w-[553px]">Corporate Retreats</h2>
+                <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55] max-w-[462px] md:self-end">We create immersive retreats that inspire collaboration and build team cohesion.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="flex flex-col gap-6">
+                    <div class="aspect-[487/580] overflow-hidden border border-olive">
+                        <img src="https://www.figma.com/api/mcp/asset/7a40f938-c975-4f4c-83ed-ef1d9593d85a" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-olive text-[28px] md:text-[32px] font-semibold leading-[1.2]">Destination Research</h3>
+                        <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">We find the perfect location that aligns with your objectives, corporate culture, and budget.</p>
+                        <ul class="space-y-2 mt-2">
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Curated location selection</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Detailed recommendations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flex flex-col gap-6">
+                    <div class="aspect-[487/580] overflow-hidden border border-olive">
+                        <img src="https://www.figma.com/api/mcp/asset/58b0d23c-ac18-439d-951e-72c16051ef3c" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-olive text-[28px] md:text-[32px] font-semibold leading-[1.2]">Travel Management</h3>
+                        <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">Seamless coordination of all travel logistics for a stress-free journey from start to finish.</p>
+                        <ul class="space-y-2 mt-2">
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>End-to-end coordination</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Personalized transportation</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex flex-col gap-6">
+                    <div class="aspect-[487/580] overflow-hidden border border-olive relative">
+                        <img src="https://www.figma.com/api/mcp/asset/460cf893-6e78-49d1-887b-47163aa5d51c" alt="" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3 class="text-olive text-[28px] md:text-[32px] font-semibold leading-[1.2]">Venue Management</h3>
+                        <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">Expert negotiation and management of venue contracts to secure optimal terms and spaces.</p>
+                        <ul class="space-y-2 mt-2">
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Favorable terms and rates</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-olive text-[18px] md:text-[20px] font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                                <span>Space management</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS QBC ============= -->
+    <section class="relative h-[850px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/79f205f8-571c-43b3-a498-c13233df43c3" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-cream text-[20px] font-medium">Digits QBC (3/12)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= EVENT PRODUCTION ============= -->
+    <section id="production" class="py-[120px] px-10">
+        <div class="max-w-[1360px] mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 mb-[80px]">
+                <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1] max-w-[553px]">Event Production</h2>
+                <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55] max-w-[462px] md:self-end">We produce flawless corporate events that align with your brand and engage your audience.</p>
+            </div>
+
+            <div class="flex flex-col gap-12 max-w-[860px] mx-auto">
+                <div class="flex items-center gap-12">
+                    <div class="w-[64px] h-[64px] rounded-full flex items-center justify-center flex-shrink-0" style="border: 1.5px solid rgba(107, 131, 71, 0.65);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 text-olive">
+                            <path d="M2 3h20"/><path d="M21 3v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3"/><path d="m7 21 5-6 5 6"/><path d="M9 11v-3"/><path d="M13 11v-5"/><path d="M17 11v-2"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-3 text-olive">
+                        <h3 class="text-[28px] md:text-[32px] font-normal leading-[1.2]">Conferences + Trade Shows</h3>
+                        <p class="text-[18px] md:text-[20px] font-medium leading-[1.5]">Seamless coordination of complex multi-day events with engaging experiences for all attendees.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-12">
+                    <div class="w-[64px] h-[64px] rounded-full flex items-center justify-center flex-shrink-0" style="border: 1.5px solid rgba(107, 131, 71, 0.65);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 text-olive">
+                            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-3 text-olive">
+                        <h3 class="text-[28px] md:text-[32px] font-normal leading-[1.2]">Product Launches</h3>
+                        <p class="text-[18px] md:text-[20px] font-medium leading-[1.5]">Strategic event design to create maximum impact for your new product or service.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-12">
+                    <div class="w-[64px] h-[64px] rounded-full flex items-center justify-center flex-shrink-0" style="border: 1.5px solid rgba(107, 131, 71, 0.65);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 text-olive">
+                            <path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-3 text-olive">
+                        <h3 class="text-[28px] md:text-[32px] font-normal leading-[1.2]">Ancillary Conference Events</h3>
+                        <p class="text-[18px] md:text-[20px] font-medium leading-[1.5]">Distinctive receptions and networking sessions that complement your main conference.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-12">
+                    <div class="w-[64px] h-[64px] rounded-full flex items-center justify-center flex-shrink-0" style="border: 1.5px solid rgba(107, 131, 71, 0.65);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 text-olive">
+                            <rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-3 text-olive">
+                        <h3 class="text-[28px] md:text-[32px] font-normal leading-[1.2]">Holiday Celebrations</h3>
+                        <p class="text-[18px] md:text-[20px] font-medium leading-[1.5]">Festive and creative company celebrations that show appreciation and build team camaraderie.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-12">
+                    <div class="w-[64px] h-[64px] rounded-full flex items-center justify-center flex-shrink-0" style="border: 1.5px solid rgba(107, 131, 71, 0.65);">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9 text-olive">
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v22"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-3 text-olive">
+                        <h3 class="text-[28px] md:text-[32px] font-normal leading-[1.2]">Board Meetings + Dinners</h3>
+                        <p class="text-[18px] md:text-[20px] font-medium leading-[1.5]">Polished, professional events with impeccable service for your most important stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: DIGITS NETWORKING ============= -->
+    <section class="relative h-[850px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/1d5b13f4-8f92-4e38-874e-8ee3484c2703" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-cream text-[20px] font-medium">Digits Networking (3/12)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= VENUE CONSULTING ============= -->
+    <section id="venue" class="py-[120px] px-10">
+        <div class="max-w-[1360px] mx-auto">
+            <div class="max-w-[574px] mb-[80px]">
+                <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1] mb-4">Venue Consulting</h2>
+                <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">We help venues maximize their potential with strategic marketing and showcase events.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-olive p-10 aspect-square flex flex-col justify-between">
+                    <h3 class="text-cream text-[28px] md:text-[32px] font-medium leading-[1.2] max-w-[280px]">Venue Styling<br>+ Photography</h3>
+                    <p class="text-sage text-[18px] md:text-[20px] font-medium leading-[1.4]">Professional styling and photography services to showcase your venue's unique features and possibilities.</p>
+                </div>
+                <div class="bg-olive p-10 aspect-square flex flex-col justify-between">
+                    <h3 class="text-cream text-[28px] md:text-[32px] font-medium leading-[1.2] max-w-[280px]">Sales Deck Development</h3>
+                    <p class="text-sage text-[18px] md:text-[20px] font-medium leading-[1.4]">Compelling, professionally designed sales materials that effectively communicate your venue's value proposition.</p>
+                </div>
+                <div class="bg-olive p-10 aspect-square flex flex-col justify-between">
+                    <h3 class="text-cream text-[28px] md:text-[32px] font-medium leading-[1.2] max-w-[280px]">Event Planner Showcase</h3>
+                    <p class="text-sage text-[18px] md:text-[20px] font-medium leading-[1.4]">Strategic events that bring decision-makers to your venue and showcase its capabilities in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: CRASHLYTICS + TWITTER ============= -->
+    <section class="relative h-[850px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/c8e4bc32-2200-4d46-9cb4-e7a97f3df454" alt="" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.10);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-cream text-[20px] font-medium">Crashlytics + Twitter (3/12)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-cream flex items-center justify-center text-cream hover:bg-cream/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= PAST CLIENTS ============= -->
+    <section id="clients" class="py-[120px] px-10">
+        <div class="max-w-[1360px] mx-auto">
+            <div class="max-w-[552px] mb-[80px] md:ml-[16.67%]">
+                <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1] mb-4">Past Clients</h2>
+                <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.55]">We're proud to have worked with some amazing people and companies.</p>
+            </div>
+
+            <div class="max-w-[897px] mx-auto flex flex-wrap items-center justify-center gap-x-[120px] gap-y-12">
+                <img src="https://www.figma.com/api/mcp/asset/f13f23c9-f41f-4a87-aa44-2bf49cc352f7" alt="Digits" class="w-[207px] h-[58px] object-contain flex-shrink-0">
+                <img src="https://www.figma.com/api/mcp/asset/0c19c839-d9d5-4f8e-8f9b-3e72c497f260" alt="Google Cloud" class="w-[207px] h-[37px] object-contain flex-shrink-0">
+                <img src="https://www.figma.com/api/mcp/asset/26c6e054-0372-489b-bcea-246046852877" alt="Okta" class="w-[207px] h-[68px] object-contain flex-shrink-0">
+                <img src="https://www.figma.com/api/mcp/asset/47cadd36-0bc8-4864-9110-6d6dfd0fc8fa" alt="Roblox" class="w-[207px] h-[38px] object-contain flex-shrink-0">
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <img src="https://www.figma.com/api/mcp/asset/1ec0d67d-895f-41fb-a24a-8a6e7d5ecf7c" alt="" class="w-[66px] h-[46px] object-contain">
+                    <img src="https://www.figma.com/api/mcp/asset/30749d69-c6c3-4ff3-a329-5da56b320ce9" alt="YouTube" class="w-[134px] h-[41px] object-contain">
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 gap-x-[100px] gap-y-12 mt-[100px] max-w-[1360px] mx-auto">
+                <div class="border-t border-olive pt-10 px-2 min-h-[437px] flex flex-col text-olive">
+                    <p class="text-olive text-[64px] leading-none mb-2 font-normal">&ldquo;</p>
+                    <p class="text-[24px] font-medium leading-[1.25] max-w-[587px] mb-auto">Olive Events transformed our corporate retreat from a standard team gathering to an unforgettable experience that our employees still talk about months later.&rdquo;</p>
+                    <div class="mt-12">
+                        <p class="text-[24px] font-semibold leading-[1.25]">Sarah Johnson</p>
+                        <p class="text-[20px] font-medium leading-[1.25] mt-2">Chief People Officer, Digits</p>
+                    </div>
+                </div>
+                <div class="border-t border-olive pt-10 px-2 min-h-[437px] flex flex-col text-olive">
+                    <p class="text-olive text-[64px] leading-none mb-2 font-normal">&ldquo;</p>
+                    <p class="text-[24px] font-medium leading-[1.25] max-w-[587px] mb-auto">Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <div class="mt-12">
+                        <p class="text-[24px] font-semibold leading-[1.25]">Dave Baden</p>
+                        <p class="text-[20px] font-medium leading-[1.25] mt-2">Founder, Show.Me</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= IMAGE BREAK: CRASHLYTICS + TWITTER (light, narrow) ============= -->
+    <section class="relative h-[850px] overflow-hidden border-y border-olive">
+        <img src="https://www.figma.com/api/mcp/asset/0da7a644-bca9-4a31-a9a6-c3902aadc158" alt="" class="absolute h-full top-0 object-cover" style="left: 30.33%; width: 39.35%;">
+        <div class="absolute inset-0" style="background-color: rgba(42, 42, 38, 0.08);"></div>
+        <div class="absolute bottom-[40px] left-14 flex flex-col gap-6">
+            <p class="text-olive text-[20px] font-medium">Crashlytics + Twitter (3/12)</p>
+            <div class="flex items-center gap-6">
+                <button aria-label="Previous" class="w-12 h-12 rounded-full border border-olive flex items-center justify-center text-olive hover:bg-olive/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button aria-label="Next" class="w-12 h-12 rounded-full border border-olive flex items-center justify-center text-olive hover:bg-olive/10 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= CONTACT ============= -->
+    <section id="contact" class="py-[140px] px-10">
+        <div class="max-w-[1360px] mx-auto md:ml-[16.67%]">
+            <h2 class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1] mb-12">Contact</h2>
+            <div class="flex flex-col gap-3 max-w-[462px]">
+                <p class="text-olive text-[44px] md:text-[56px] font-normal leading-[1.1]">Allison Fox</p>
+                <p class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.5]">Principal</p>
+                <a href="mailto:afox@olive-events.com" class="text-olive text-[18px] md:text-[20px] font-medium leading-[1.5] underline decoration-solid hover:text-clay transition-colors">afox@olive-events.com</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
