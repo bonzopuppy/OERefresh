@@ -216,6 +216,42 @@ body.palette-noir {
 }
 
 /* ============================================================
+   LOCKUP — final logo mark (Yanone Kaffeesatz 300, olive-as-O)
+   ============================================================ */
+.lockup {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.lockup .wm-olive {
+  color: var(--olive);
+  display: inline-flex;
+  align-items: baseline;
+}
+.lockup .wm-glyph {
+  display: inline-block;
+  height: 0.748em;
+  width: 0.5905em;
+  vertical-align: baseline;
+  transform: translateY(0.0353em);
+  margin-right: 0.02em;
+  overflow: visible;
+  color: var(--olive);
+}
+.lockup .wm-glyph .pimento { fill: var(--pimento); stroke: none; }
+.lockup .wm-gap { display: inline-block; width: 0.24em; }
+.lockup .wm-events { color: var(--ink); }
+
+.lockup--nav    { font-size: 22px; }
+.lockup--footer { font-size: 32px; }
+
+/* ============================================================
    HERO
    ============================================================ */
 .hero {
