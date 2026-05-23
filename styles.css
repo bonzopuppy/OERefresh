@@ -33,6 +33,7 @@ em, i { font-style: italic; }
 :root {
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: 'Instrument Serif', 'Fraunces', ui-serif, Georgia, serif;
+  --font-label: 'Yanone Kaffeesatz', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Menlo', monospace;
 
   --shell-pad-x: clamp(20px, 4vw, 64px);
@@ -58,7 +59,7 @@ body.type-instrument { --font-display: 'Instrument Serif', 'Fraunces', ui-serif,
   --olive-deep: #355A1B;
   --olive-bright: #6E9D3F;
   --pimento: #EE6C3B;
-  --olive-glyph-svg: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 38' xmlns='http://www.w3.org/2000/svg'><path fill='%234F7A2E' fill-rule='evenodd' d='M1,19 A14,18 0 1,0 29,19 A14,18 0 1,0 1,19 Z M3,19 A12,17 0 1,0 27,19 A12,17 0 1,0 3,19 Z'/><ellipse cx='17' cy='10' rx='2.5' ry='4.5' transform='rotate(-30 17 10)' fill='none' stroke='%23EE6C3B' stroke-width='0.9'/></svg>");
+  --olive-glyph-svg: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 38' xmlns='http://www.w3.org/2000/svg'><path fill='%234F7A2E' fill-rule='evenodd' d='M1,19 A14,18 0 1,0 29,19 A14,18 0 1,0 1,19 Z M4,19 A11,16.5 0 1,0 26,19 A11,16.5 0 1,0 4,19 Z'/><ellipse cx='17' cy='10' rx='2.5' ry='4.5' transform='rotate(-30 17 10)' fill='%23EE6C3B'/></svg>");
   --cobalt: #1E3FCC;
   --scarlet: #D9342B;
   --accent: var(--olive);
@@ -103,7 +104,7 @@ body.palette-noir {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 32px;
-  height: 96px;
+  height: 72px;
   background: color-mix(in srgb, var(--bone) 92%, transparent);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
@@ -128,12 +129,60 @@ body.palette-noir {
   color: var(--accent);
 }
 .mark-wordmark {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 22px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 30px;
   letter-spacing: -0.01em;
   color: var(--ink);
   line-height: 1;
+}
+
+/* ----------------------------------------------------------------
+   Inline lockup — the olive glyph IS the "O" of Olive.
+   "Olive" reads in accent green, then a dot separator, then "Events"
+   in ink. All-caps, Instrument Sans 500.
+   ---------------------------------------------------------------- */
+.mark-wordmark--inline,
+.foot-label--inline {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  font-family: 'Yanone Kaffeesatz', var(--font-sans);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.mark-wordmark--inline .wm-olive,
+.foot-label--inline .wm-olive {
+  color: var(--accent);
+  display: inline-flex;
+  align-items: baseline;
+}
+.mark-wordmark--inline .wm-glyph,
+.foot-label--inline .wm-glyph {
+  display: inline-block;
+  width: 0.5905em;
+  height: 0.748em;
+  vertical-align: baseline;
+  transform: translateY(0.0353em);
+  margin-right: 0.02em;
+  color: var(--accent);
+  overflow: visible;
+}
+.mark-wordmark--inline .wm-glyph .pimento,
+.foot-label--inline .wm-glyph .pimento {
+  fill: var(--pimento);
+  stroke: none;
+}
+.mark-wordmark--inline .wm-gap,
+.foot-label--inline .wm-gap {
+  display: inline-block;
+  width: 0.32em;
+}
+.mark-wordmark--inline .wm-events,
+.foot-label--inline .wm-events {
+  color: var(--ink);
 }
 .nav-mark {
   display: inline-flex;
@@ -150,7 +199,7 @@ body.palette-noir {
   color: var(--accent);
 }
 .mark-glyph svg { width: 100%; height: 100%; overflow: visible; display: block; }
-.mark-glyph .pimento { stroke: var(--pimento); fill: none; stroke-width: 0.9; }
+.mark-glyph .pimento { fill: var(--pimento); stroke: none; }
 .mark-stack {
   display: inline-flex;
   flex-direction: column;
@@ -216,42 +265,6 @@ body.palette-noir {
 }
 
 /* ============================================================
-   LOCKUP — final logo mark (Yanone Kaffeesatz 300, olive-as-O)
-   ============================================================ */
-.lockup {
-  display: inline-flex;
-  align-items: baseline;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--ink);
-}
-.lockup .wm-olive {
-  color: var(--olive);
-  display: inline-flex;
-  align-items: baseline;
-}
-.lockup .wm-glyph {
-  display: inline-block;
-  height: 0.748em;
-  width: 0.5905em;
-  vertical-align: baseline;
-  transform: translateY(0.0353em);
-  margin-right: 0.02em;
-  overflow: visible;
-  color: var(--olive);
-}
-.lockup .wm-glyph .pimento { fill: var(--pimento); stroke: none; }
-.lockup .wm-gap { display: inline-block; width: 0.24em; }
-.lockup .wm-events { color: var(--ink); }
-
-.lockup--nav    { font-size: 40px; }
-.lockup--footer { font-size: 44px; }
-
-/* ============================================================
    HERO
    ============================================================ */
 .hero {
@@ -271,11 +284,13 @@ body.palette-noir {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font-family: var(--font-label);
+  font-weight: 400;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: var(--tracker-wide);
+  letter-spacing: 0.08em;
   color: var(--mute);
-  font-family: var(--font-mono);
+  line-height: 1;
 }
 .dot {
   width: 10px; height: 13px;
@@ -404,7 +419,7 @@ body.hero-centered .hero {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 var(--shell-pad-x) clamp(28px, 3.5vh, 48px);
+  padding: 0 var(--shell-pad-x) clamp(28px, 3.5vh, 56px);
   position: relative;
   min-height: 92vh;
   overflow: hidden;
@@ -466,9 +481,10 @@ body.hero-centered .hero-headline {
   font-size: clamp(44px, 7vw, 108px);
   line-height: 1.04;
   letter-spacing: -0.018em;
-  max-width: 18ch;
+  max-width: 28ch;
   text-wrap: balance;
 }
+body.hero-centered .hero-headline .hl-line { white-space: nowrap; }
 body.hero-centered .hero-headline em { color: var(--pimento); }
 
 /* Scroll cue — small outlined circle with chevron, beneath the headline */
@@ -480,7 +496,7 @@ body.hero-centered .hero-scroll-cue {
   justify-content: center;
   width: 40px;
   height: 40px;
-  margin-top: clamp(28px, 4vh, 44px);
+  margin-top: clamp(20px, 2.5vh, 32px);
   border-radius: 999px;
   color: rgba(241, 236, 223, 0.78);
   transition: transform 220ms ease, color 220ms ease;
@@ -668,12 +684,14 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: var(--font-label);
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--mute);
   margin-bottom: 24px;
+  line-height: 1;
 }
 .tag-no {
   color: var(--pimento);
@@ -712,17 +730,19 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: var(--font-label);
   font-weight: 400;
   font-size: 16px;
-  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--mute);
+  line-height: 1;
 }
 .section-eyebrow .tag-no { color: var(--pimento); font-weight: 500; }
 .section-eyebrow .tag-no + span::before {
   content: "·";
   color: var(--mute);
-  margin-right: 8px;
+  margin-right: 6px;
   margin-left: -2px;
 }
 
@@ -773,11 +793,11 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
 .wwd-body {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 44px);
-  line-height: 1.22;
-  letter-spacing: -0.012em;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
   color: var(--ink);
-  max-width: 50ch;
+  max-width: 32ch;
   text-wrap: balance;
   margin: 0 auto;
 }
@@ -962,12 +982,13 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
   gap: 18px;
 }
 .svc-num {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: var(--tracker-wide);
-  color: var(--accent);
+  font-family: var(--font-label);
   font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  line-height: 1;
 }
 .svc-title {
   font-family: var(--font-display);
@@ -1183,12 +1204,11 @@ body.clients-grid .clients-view--type { display: none; }
   align-items: center;
 }
 .clients-list li:not(:nth-last-child(-n+2))::after {
-  content: "";
-  display: inline-block;
-  width: 0.18em;
-  height: 0.22em;
-  background: var(--olive-glyph-svg) center / contain no-repeat;
+  content: "·";
+  color: var(--accent);
   margin-left: 28px;
+  font-weight: 400;
+  vertical-align: 0.15em;
 }
 .clients-list li:last-child {
   font-style: italic;
@@ -1402,11 +1422,7 @@ body.clients-grid .clients-view--type { display: none; }
 }
 .foot-mark .mark-glyph { width: 38px; height: 48px; }
 .foot-label {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 30px;
   line-height: 1;
 }
 .foot-label b { color: var(--accent); font-weight: 500; }
@@ -1640,3 +1656,324 @@ body.clients-grid .clients-view--type { display: none; }
   section { break-inside: avoid; padding: 24px; }
   body { background: white; color: black; }
 }
+
+/* ============================================================
+   DIRECTION C — Yanone as the display voice
+   ------------------------------------------------------------
+   Activated by `body.display-yanone`. Headlines move to Yanone
+   Kaffeesatz 300, uppercase. Instrument Serif italic survives
+   as an inline accent voice (inside <em>). Poster energy.
+   ============================================================ */
+body.display-yanone {
+  --font-display: 'Yanone Kaffeesatz', 'Instrument Sans', sans-serif;
+}
+
+/* All display headlines: shared shape — Yanone 300, uppercase,
+   tight line, hair of positive tracking. */
+body.display-yanone .hero-headline,
+body.display-yanone .section-title,
+body.display-yanone .work-title,
+body.display-yanone .svc-title,
+body.display-yanone .ap-title,
+body.display-yanone .contact-headline,
+body.display-yanone .wwd-body,
+body.display-yanone .clients-list,
+body.display-yanone .manifesto-body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+  line-height: 0.96;
+}
+
+/* Per-role size bumps — Yanone is condensed and light, so we keep
+   the original Instrument Serif sizing and let Yanone's narrower
+   letterforms breathe inside the existing layout. */
+body.display-yanone .hero-headline {
+  font-size: clamp(40px, 6.6vw, 96px);
+  line-height: 0.96;
+}
+body.display-yanone .section-title {
+  font-size: clamp(36px, 5.2vw, 76px);
+}
+body.display-yanone .section-head--catalog .section-title--centered {
+  font-size: clamp(34px, 4.6vw, 64px);
+}
+body.display-yanone .work-title {
+  font-size: clamp(22px, 2.2vw, 32px);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+body.display-yanone .work-item--lg .work-title {
+  font-size: clamp(28px, 3vw, 44px);
+}
+body.display-yanone .svc-title {
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: 0.008em;
+  line-height: 0.98;
+}
+body.display-yanone .ap-title {
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: 0.012em;
+  line-height: 1.05;
+}
+body.display-yanone .contact-headline {
+  font-size: clamp(48px, 8vw, 128px);
+  line-height: 0.94;
+}
+body.display-yanone .wwd-body {
+  font-size: clamp(22px, 2.4vw, 30px);
+  letter-spacing: 0.008em;
+  line-height: 1.12;
+  max-width: 36ch;
+}
+body.display-yanone .clients-list {
+  font-size: clamp(40px, 7vw, 104px);
+  letter-spacing: 0.005em;
+}
+body.display-yanone .manifesto-body {
+  font-size: clamp(24px, 3vw, 40px);
+}
+
+/* The italic em: stays Instrument Serif, drops out of uppercase. */
+body.display-yanone .hero-headline em,
+body.display-yanone .section-title em,
+body.display-yanone .work-title em,
+body.display-yanone .svc-title em,
+body.display-yanone .ap-title em,
+body.display-yanone .contact-headline em,
+body.display-yanone .wwd-body em,
+body.display-yanone .manifesto-body em {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: -0.022em;
+  color: var(--pimento);
+}
+
+/* Hero headline italic — slightly tighter to keep the line balanced */
+body.display-yanone .hero-headline em {
+  letter-spacing: -0.028em;
+}
+
+/* Contact-sub stays italic Instrument Serif as a counterpoint */
+body.display-yanone .contact-sub {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.015em;
+  font-size: 0.38em;
+}
+
+/* Contact email reads as Yanone too — poster-style line */
+body.display-yanone .contact-email {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(24px, 2.6vw, 40px);
+}
+
+/* About title "Allison Fox." needs a hair more tracking in caps */
+body.display-yanone .about-text .section-title {
+  letter-spacing: 0.012em;
+}
+
+/* Catalog sub stays italic serif — already correct, but explicit
+   for the override stack */
+body.display-yanone .section-head--catalog .section-sub--centered {
+  font-family: 'Instrument Serif', serif;
+  text-transform: none;
+  letter-spacing: -0.005em;
+}
+
+/* Clients list: last <li> ("+ studios & agencies under NDA") stays
+   small Instrument Serif italic — already does, but reaffirm under
+   the uppercase override stack. */
+body.display-yanone .clients-list li:last-child {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+/* Approach number "i." "ii." stays italic Instrument Serif —
+   the giant italic numeral is the accent voice for the section */
+body.display-yanone .ap-no {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  text-transform: none;
+}
+
+/* Link-arrow text stays italic serif (no change needed but explicit) */
+body.display-yanone .link-arrow {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  text-transform: none;
+}
+
+/* Hero centered headline override — Yanone is more compact, can
+   afford a wider max-width and looser balance. */
+body.display-yanone.hero-centered .hero-headline {
+  max-width: 22ch;
+  letter-spacing: 0.005em;
+}
+body.display-yanone.hero-centered .hero-headline em {
+  letter-spacing: -0.025em;
+}
+
+/* ============================================================
+   DIRECTION C′ — Yanone display, SENTENCE CASE
+   ------------------------------------------------------------
+   Layered on top of `body.display-yanone`. Drops text-transform,
+   bumps weight to 400 (lowercase reads lighter), retunes tracking
+   and line-height for descenders. More editorial / less poster.
+   ============================================================ */
+/* Big display headlines → light 300, sentence case. */
+body.display-yanone-sentence .hero-headline,
+body.display-yanone-sentence .section-title,
+body.display-yanone-sentence .contact-headline,
+body.display-yanone-sentence .clients-list,
+body.display-yanone-sentence .wwd-body,
+body.display-yanone-sentence .manifesto-body {
+  text-transform: none;
+  font-weight: 300;
+  letter-spacing: -0.005em;
+}
+
+/* Smaller titles (event titles, service titles, approach principles)
+   → 400, sentence case. They sit beside body copy and need a hair
+   more presence than the 300 used for big display. */
+body.display-yanone-sentence .work-title,
+body.display-yanone-sentence .svc-title,
+body.display-yanone-sentence .ap-title {
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+/* Slight size bumps — lowercase x-height < cap-height, so we
+   give each role a hair more to match the optical weight of the
+   uppercase variant. */
+body.display-yanone-sentence .hero-headline {
+  font-size: clamp(48px, 7.6vw, 116px);
+  line-height: 1.02;
+}
+body.display-yanone-sentence .section-title {
+  font-size: clamp(40px, 5.8vw, 88px);
+  line-height: 1.03;
+}
+body.display-yanone-sentence .section-head--catalog .section-title--centered {
+  font-size: clamp(38px, 5.2vw, 76px);
+}
+body.display-yanone-sentence .work-title {
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.005em;
+}
+body.display-yanone-sentence .work-item--lg .work-title {
+  font-size: clamp(32px, 3.4vw, 50px);
+}
+body.display-yanone-sentence .svc-title {
+  font-size: clamp(40px, 4.6vw, 64px);
+  line-height: 1.02;
+}
+body.display-yanone-sentence .ap-title {
+  font-size: clamp(26px, 2.4vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+}
+body.display-yanone-sentence .contact-headline {
+  font-size: clamp(56px, 9vw, 144px);
+  line-height: 1;
+}
+body.display-yanone-sentence .wwd-body {
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  max-width: min(1100px, 84vw);
+}
+body.display-yanone-sentence .clients-list {
+  font-size: clamp(48px, 8vw, 120px);
+  letter-spacing: -0.005em;
+}
+body.display-yanone-sentence .manifesto-body {
+  font-size: clamp(28px, 3.4vw, 46px);
+}
+
+/* Italic em accents → Yanone in pimento. Same family AND same
+   weight as the surrounding headline — only color picks it out. */
+body.display-yanone-sentence .hero-headline em,
+body.display-yanone-sentence .section-title em,
+body.display-yanone-sentence .contact-headline em,
+body.display-yanone-sentence .wwd-body em,
+body.display-yanone-sentence .manifesto-body em {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  color: var(--pimento);
+}
+
+/* About body em — stays in the surrounding Instrument Sans, same
+   weight as the paragraph. Only color picks it out from the running
+   text. */
+body.display-yanone-sentence .about-body em {
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: inherit;
+  color: var(--pimento);
+}
+body.display-yanone-sentence .work-title em,
+body.display-yanone-sentence .svc-title em,
+body.display-yanone-sentence .ap-title em {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  color: var(--pimento);
+}
+
+/* Hero centered override for sentence variant — tighter max-width
+   since lowercase is wider than caps for the same character count. */
+body.display-yanone.display-yanone-sentence.hero-centered .hero-headline {
+  max-width: 16ch;
+  letter-spacing: -0.005em;
+}
+
+/* Contact email — sentence too. Looks more like a real email. */
+body.display-yanone-sentence .contact-email {
+  text-transform: none;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* About title "Allison Fox." reads as a name, not a billboard */
+body.display-yanone-sentence .about-text .section-title {
+  letter-spacing: -0.005em;
+}
+
+/* Section subtitles ("Plenty more on request.", catalog subs) —
+   Yanone sentence case, not italic serif. */
+body.display-yanone-sentence .section-sub,
+body.display-yanone-sentence .section-head--catalog .section-sub--centered,
+body.display-yanone-sentence .contact-sub {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.005em;
+}
+
+/* Clients-list last item already italic Instrument Serif — no
+   change needed but make sure the sentence override doesn't undo it */
+body.display-yanone.display-yanone-sentence .clients-list li:last-child {
+  font-weight: 400;
+}
+
