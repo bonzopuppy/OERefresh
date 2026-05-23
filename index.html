@@ -1,996 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olive Events | Brand Experiences for Category Leaders</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'oe': {
-                            50: '#f4f7f1',
-                            100: '#e8efe2',
-                            200: '#d2e0c5',
-                            300: '#bcd1a8',
-                            400: '#a6c28b',
-                            500: '#7cb518',
-                            600: '#649414',
-                            700: '#507410',
-                            800: '#3c570c',
-                            900: '#283a08'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    letterSpacing: {
-                        tightest: '-.075em',
-                        tighter: '-.05em',
-                        tight: '-.025em',
-                        normal: '0',
-                        wide: '.025em',
-                        wider: '.05em',
-                        widest: '.15em',
-                    },
-                },
-            }
-        }
-    </script>
-    <style>
-        /* Remove or comment out this universal selector */
-        /* * {
-            font-style: normal;
-        } */
-
-        /* Update these base styles */
-        body {
-            background-color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            color: #000000;
-            font-weight: 200;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 200;
-            letter-spacing: -0.02em;
-            color: #000000;
-        }
-        
-        p {
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: -0.01em;
-            font-weight: 200;
-        }
-
-        /* Remove these overrides that are forcing normal font-style */
-        /* .font-serif, 
-        .text-xl,
-        .text-2xl,
-        .text-3xl,
-        .text-4xl,
-        .text-5xl {
-            font-style: normal !important;
-        } */
-
-        /* Keep this to allow italics */
-        em {
-            font-style: italic !important;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            background-color: #ffffff;
-            font-family: 'Outfit', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            color: #000000;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: -0.02em;
-            color: #000000;
-        }
-        
-        p {
-            font-family: 'Outfit', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-        
-        .serif-display {
-            letter-spacing: -0.03em;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #fbfbf8 0%, #f5f7f6 100%);
-        }
-        
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-            font-weight: 400;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #000000;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .subtle-shadow {
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
-        }
-        
-        .section-title {
-            display: inline-block;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            bottom: -12px;
-            left: 0;
-            background-color: #000000;
-        }
-        
-        .numbered-item {
-            position: relative;
-        }
-        
-        .numbered-item::before {
-            content: attr(data-number);
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 5rem;
-            font-weight: 700;
-            color: rgba(0, 0, 0, 0.08);
-            line-height: 1;
-            z-index: 0;
-        }
-        
-        input, textarea {
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #000000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-primary {
-            background-color: #000000;
-            color: white;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: #333333;
-            transform: translateY(-2px);
-        }
-        
-        .btn-outline {
-            border: 1px solid #000000;
-            color: #000000;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .btn-outline:hover {
-            background-color: #000000;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Fade in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        
-        .fade-in-delay-1 {
-            animation-delay: 0.2s;
-        }
-        
-        .fade-in-delay-2 {
-            animation-delay: 0.4s;
-        }
-        
-        .fade-in-delay-3 {
-            animation-delay: 0.6s;
-        }
-        
-        @keyframes scrollImages {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-1800px);
-            }
-        }
-        
-        #image-strip:hover {
-            animation-play-state: paused;
-        }
-        
-        /* Additional style for image items */
-        .image-item {
-            width: 400px !important; /* Keep the current size */
-            padding-left: 3px !important; 
-            padding-right: 3px !important;
-        }
-        
-        /* Remove the serif font family since we're using Outfit for everything */
-        .font-serif {
-            font-family: 'Outfit', sans-serif !important;
-        }
-
-        /* Add specific line-height for h2 only */
-        h2 {
-            font-weight: 200 !important;
-            line-height: 1.3 !important;
-        }
-
-        /* Update any specific h2 instances that might have inline font weights */
-        .text-3xl, 
-        .text-4xl,
-        .text-5xl {
-            font-weight: 200 !important;
-        }
-
-        /* Reset hero h1 line height */
-        .hero h1, 
-        h1.text-4xl,
-        h1.text-6xl {
-            line-height: 1.1;
-        }
-
-        /* Update numbered items */
-        .numbered-item h3 {
-            font-weight: 200;
-        }
-
-        /* Update section headers */
-        .uppercase.tracking-widest {
-            font-weight: 200;
-        }
-
-        /* Update form button */
-        button.font-medium {
-            font-weight: 400;
-        }
-
-        /* Update footer headings */
-        footer h3.font-medium {
-            font-weight: 400;
-        }
-
-        /* Remove any color overrides */
-        strong {
-            color: inherit;
-        }
-        
-        /* Update the text-oe-500 color override to use the correct brand color */
-        .text-oe-500 {
-            color: #7cb518 !important;
-        }
-
-        /* Remove the conflicting color override */
-        .text-oe-400 {
-            color: #7cb518;  /* Update from #a6c28b to primary brand color */
-        }
-
-        /* Add this specific style */
-        .hero-emphasis {
-            color: #8f9768;
-            font-weight: 600;
-            font-style: italic;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Olive Events — Brand experiences for technology companies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
 </head>
-<body class="font-sans text-black bg-white">
-    <!-- Navigation Bar with Centered Logo -->
-    <header class="py-6 px-6 md:px-12 sticky top-0 z-50 bg-white">
-        <div class="max-w-5xl mx-auto">
-            <div class="hidden md:flex md:items-center md:justify-between">
-                <!-- Left Navigation Links -->
-                <div class="flex items-center space-x-8">
-                    <a href="#about" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">About</a>
-                    <a href="#activations" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">Brand Activations</a>
-                    <a href="#thought-leadership" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">Thought Leadership</a>
-                </div>
+<body class="palette-bone hero-centered type-instrument clients-type">
 
-                <!-- Centered Logo -->
-                <a href="#" class="flex-shrink-0 flex items-center absolute left-1/2 transform -translate-x-1/2">
-                    <span class="text-black text-2xl font-medium tracking-tight">OLIVE EVENTS</span>
-                </a>
+<!-- ============================================================
+     NAV — centered wordmark layout
+     ============================================================ -->
+<header class="nav nav--centered">
+  <nav class="nav-links nav-links--left" aria-label="Secondary">
+    <a href="#about">About</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#top" class="nav-mark nav-mark--centered" aria-label="Olive Events home">
+    <span class="mark-glyph mark-glyph--sm" aria-hidden="true">
+      <svg viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" fill-rule="evenodd" d="M1,19 A14,18 0 1,0 29,19 A14,18 0 1,0 1,19 Z M3,19 A12,17 0 1,0 27,19 A12,17 0 1,0 3,19 Z"/>
+        <ellipse class="pimento" cx="17" cy="10" rx="2.5" ry="4.5" transform="rotate(-30 17 10)"/>
+      </svg>
+    </span>
+    <span class="mark-wordmark">Olive Events</span>
+  </a>
+  <nav class="nav-links nav-links--right" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#approach">Approach</a>
+  </nav>
+</header>
 
-                <!-- Right Navigation Links -->
-                <div class="flex items-center space-x-8">
-                    <a href="#presence" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">Industry Presence</a>
-                    <a href="#clients" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">Past Clients</a>
-                    <a href="#contact" class="nav-link px-2 py-1 text-sm font-[200] text-black hover:text-oe-600">Contact</a>
-                </div>
-            </div>
-            
-            <!-- Mobile Navigation -->
-            <div class="flex justify-between items-center md:hidden">
-                <a href="#" class="flex-shrink-0 flex items-center">
-                    <span class="text-black text-2xl font-medium tracking-tight">OLIVE EVENTS</span>
-                </a>
-                <div class="flex items-center">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-oe-600 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
+<!-- ============================================================
+     HERO — centered editorial cover
+     ============================================================ -->
+<section id="top" class="hero">
+  <h1 class="hero-headline">
+    <span class="hl-line">Events that make a</span>
+    <span class="hl-line">company <em>feel like itself</em>.</span>
+  </h1>
+  <div class="hero-media">
+    <figure class="hero-photo">
+      <img src="images/event2.jpg" alt="Digits annual offsite — main stage with LED-suit performer" />
+    </figure>
+  </div>
+  <a class="hero-scroll-cue" href="#what-we-do" aria-label="Scroll to what we do">
+    <svg viewBox="0 0 36 36" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <circle cx="18" cy="18" r="17.5" />
+      <path d="M13 16l5 5 5-5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</section>
+
+<!-- ============================================================
+     01 · WHAT WE DO — compact centered intro
+     ============================================================ -->
+<section id="what-we-do" class="what-we-do">
+  <div class="wwd-inner">
+    <div class="section-eyebrow"><span class="tag-no">01</span><span>What we do</span></div>
+    <p class="wwd-body">
+      Brand activations, thought leadership, and conference presence — for technology companies whose events need to feel <em>as thoughtful and deliberate as the product itself.</em>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     02 · SELECTED WORK
+     ============================================================ -->
+<section id="work" class="work">
+  <header class="section-head section-head--catalog">
+    <div class="section-eyebrow"><span class="tag-no">02</span><span>Selected work</span></div>
+    <h2 class="section-title section-title--centered">A few events <em>we're proud of.</em></h2>
+    <p class="section-sub section-sub--centered"><em>Plenty more on request.</em></p>
+  </header>
+
+  <div class="work-grid">
+
+    <!-- Item 1 — large -->
+    <article class="work-item work-item--lg">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event1.jpg" alt="Twitter + Crashlytics rooftop reception, aerial view at night" />
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section with Full-Width Image Carousel -->
-        <section class="relative overflow-hidden">
-            <div class="py-20 md:py-28">
-                <div class="max-w-5xl mx-auto px-6 md:px-12 text-center">
-                    <div class="mx-auto">
-                        <h1 class="text-4xl md:text-6xl font-[200] text-black leading-tight tracking-tight">
-                            Events that make a company feel like itself —<br>
-                            <span class="font-[600] italic" style="color: #7cb518">in a room people remember.</span>
-                        </h1>
-                        <p class="mt-8 text-lg md:text-xl font-[300] text-black/70 max-w-2xl mx-auto">
-                            Activations, forums, and conference presence for technology companies. Developers, executives, policymakers.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Modify the Image Strip to use CSS animation -->
-                <div class="relative mt-32 w-full overflow-hidden">
-                    <!-- Image Strip Container with CSS animation -->
-                    <div id="image-strip" class="flex" style="width: auto; animation: scrollImages 50s linear infinite;">
-                        <!-- Images in a continuous strip with reduced spacing -->
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event1.jpg" alt="Corporate event setup" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event2.jpg" alt="Event decor" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event3.jpg" alt="Corporate retreat" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event4.jpg" alt="Conference space" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event5.jpg" alt="Team building activity" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event6.jpg" alt="Venue styling" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <!-- Duplicate images to create a seamless loop -->
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event1.jpg" alt="Corporate event setup" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event2.jpg" alt="Event decor" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="image-item flex-shrink-0 cursor-pointer">
-                            <div class="bg-[#f8f9f3] aspect-[4/3] rounded-lg overflow-hidden">
-                                <img src="images/event3.jpg" alt="Corporate retreat" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">ABOUT OLIVE EVENTS</p>
-                    <h2 class="text-3xl md:text-4xl font-[200] mb-10 text-black">
-                        Events are where a company's story stops being a deck and starts being a room. We make those rooms.
-                    </h2>
-                </div>
-
-                <!-- Using the Planning + Execution section layout for Meet Allison -->
-                <div class="bg-gray-50 rounded-lg p-12 md:p-16">
-                    <div class="grid md:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h2 class="text-3xl md:text-4xl font-[200] text-black mb-8">
-                                Meet Allison
-                            </h2>
-                            <p class="text-black font-[300] leading-relaxed mb-6">
-                                Allison has spent 15+ years building events for technology companies and the agencies that work with them. The range goes from a 12-person dinner to a 5,000-person keynote — and the playbooks that hold both to the same standard.
-                            </p>
-                            <p class="text-black font-[300] leading-relaxed">
-                                She works closely with brand, comms, and policy partners, and runs both full-time and contracted teams. She is opinionated about budgets, timelines, and what good looks like on a show floor.
-                            </p>
-                        </div>
-                        <div class="relative">
-                            <div class="bg-oe-100 aspect-square rounded-lg flex items-center justify-center overflow-hidden">
-                                <i class="fas fa-user text-6xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Brand Activations Section -->
-        <section id="activations" class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">BRAND ACTIVATIONS</p>
-                    <h2 class="text-3xl md:text-4xl font-normal mb-10 text-black">
-                        Events you own — small dinners to flagship moments — built so the audience leaves with something specific to say about you.
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-lightbulb text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Concept + Direction</h3>
-                        <p class="text-black font-[300] leading-relaxed">Figuring out what an event should look, feel, and sound like — done with your brand team, before anyone calls a vendor.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-cube text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Spaces + Stages</h3>
-                        <p class="text-black font-[300] leading-relaxed">Rooms and stages designed so your work is obvious in a glance — even to someone who didn't walk in knowing the company.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-handshake text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Vendors + Agencies</h3>
-                        <p class="text-black font-[300] leading-relaxed">A roster of producers, fabricators, and venues we already trust — held to the same bar you would.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-clipboard-check text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Production</h3>
-                        <p class="text-black font-[300] leading-relaxed">Kickoff to load-out to debrief. Several events at once, run by people who have done this before.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-book-open text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Playbooks</h3>
-                        <p class="text-black font-[300] leading-relaxed">Toolkits we leave behind so internal teams and partners can run their own events without rebuilding the wheel.</p>
-                    </div>
-
-                    <div class="bg-gray-50 rounded-lg p-8">
-                        <div class="w-12 h-12 flex items-center justify-center mb-6">
-                            <i class="fas fa-chart-line text-2xl" style="color: #6e7c57"></i>
-                        </div>
-                        <h3 class="text-xl mb-4 text-black font-[200]">Measurement</h3>
-                        <p class="text-black font-[300] leading-relaxed">Track what an event actually moved — recall, sentiment, pipeline — and write it down so the next one is better.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Thought Leadership Section -->
-        <section id="thought-leadership" class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto text-center">
-                <div class="mx-auto max-w-3xl">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">THOUGHT LEADERSHIP</p>
-                    <h2 class="text-3xl md:text-4xl font-normal mb-10 text-black">
-                        Smaller, sharper events where the people in the room actually have something to say. Built with comms and policy.
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mt-20">
-                    <div>
-                        <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
-                            <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
-                                <i class="fas fa-comments text-4xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-xl mb-2 text-oe-700">Executive Roundtables</h3>
-                        <p class="text-oe-900">Closed-door dinners and discussions where the conversation is worth showing up for.</p>
-                    </div>
-
-                    <div>
-                        <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
-                            <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
-                                <i class="fas fa-landmark text-4xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-xl mb-2 text-oe-700">Policy + Government</h3>
-                        <p class="text-oe-900">Sessions for policymakers, regulators, and researchers — run with your policy team, not around it.</p>
-                    </div>
-
-                    <div>
-                        <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
-                            <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
-                                <i class="fas fa-flask text-4xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-xl mb-2 text-oe-700">Technical Deep-Dives</h3>
-                        <p class="text-oe-900">Hands-on sessions where engineers see the work, ask hard questions, and leave with answers.</p>
-                    </div>
-
-                    <div>
-                        <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
-                            <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
-                                <i class="fas fa-newspaper text-4xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-xl mb-2 text-oe-700">Press + Analyst Briefings</h3>
-                        <p class="text-oe-900">Briefings produced like a launch — so the people writing about you get the story straight.</p>
-                    </div>
-
-                    <div>
-                        <div class="bg-oe-50 p-2 rounded-lg aspect-[4/3] overflow-hidden mb-5">
-                            <div class="bg-oe-100 w-full h-full rounded flex items-center justify-center">
-                                <i class="fas fa-users text-4xl text-oe-400 opacity-30"></i>
-                            </div>
-                        </div>
-                        <h3 class="font-serif text-xl mb-2 text-oe-700">Customer Dinners</h3>
-                        <p class="text-oe-900">Dinners with the people who actually use the product. The kind they remember.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Industry Presence Section -->
-        <section id="presence" class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">INDUSTRY PRESENCE</p>
-                    <h2 class="text-3xl md:text-4xl font-normal mb-10 text-black">
-                        When your audience is already at a conference, the question is whether they leave talking about you.
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div class="order-2 md:order-1">
-                        <div class="space-y-8">
-                            <div class="bg-oe-50 p-8 rounded-lg">
-                                <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                                    <i class="fas fa-drafting-compass text-xl text-oe-400"></i>
-                                </div>
-                                <h3 class="font-serif text-xl mb-4 text-oe-700">Booth Design + Build</h3>
-                                <p class="text-oe-900 leading-relaxed">A booth that reads in a second from across the floor — and gives someone a reason to walk in.</p>
-                            </div>
-
-                            <div class="bg-oe-50 p-8 rounded-lg">
-                                <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                                    <i class="fas fa-bullseye text-xl text-oe-400"></i>
-                                </div>
-                                <h3 class="font-serif text-xl mb-4 text-oe-700">Sponsorship Strategy</h3>
-                                <p class="text-oe-900 leading-relaxed">Pick the events worth showing up to, negotiate the package, make the spend actually do something.</p>
-                            </div>
-
-                            <div class="bg-oe-50 p-8 rounded-lg">
-                                <div class="w-12 h-12 rounded-full bg-oe-100 flex items-center justify-center mb-6">
-                                    <i class="fas fa-people-arrows text-xl text-oe-400"></i>
-                                </div>
-                                <h3 class="font-serif text-xl mb-4 text-oe-700">Attendee Engagement</h3>
-                                <p class="text-oe-900 leading-relaxed">Side events and dinners that turn a name badge into a relationship.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="order-1 md:order-2">
-                        <div class="relative">
-                            <div class="bg-[#f8f9f3] p-3 rounded-lg aspect-square">
-                                <div class="bg-[#f1f2e4] w-full h-full rounded flex items-center justify-center">
-                                    <i class="fas fa-building text-6xl text-oe-400 opacity-30"></i>
-                                </div>
-                            </div>
-                            <!-- Decorative elements -->
-                            <div class="absolute -top-6 -right-6 w-32 h-32 bg-[#e9eadb] rounded-full opacity-60 z-0"></div>
-                            <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-[#e9eadb] rounded-full opacity-60 z-0"></div>
-                        </div>
-
-                        <div class="mt-16 text-center">
-                            <a href="#about" class="bg-white text-oe-900 px-8 py-4 inline-block rounded-full font-medium hover:bg-[#f8f9f3] transition-colors">
-                                Request a Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Past Clients Section -->
-        <section id="clients" class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">PAST CLIENTS</p>
-                    <h2 class="text-3xl md:text-4xl font-normal mb-10 text-black">
-                        Programs built for technology companies people are paying attention to.
-                    </h2>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center mb-20">
-                    <div class="bg-oe-50 p-6 rounded-lg flex items-center justify-center h-28">
-                        <p class="text-lg font-serif font-medium text-oe-900 opacity-60">Digits</p>
-                    </div>
-                    <div class="bg-oe-50 p-6 rounded-lg flex items-center justify-center h-28">
-                        <p class="text-lg font-serif font-medium text-oe-900 opacity-60">Okta</p>
-                    </div>
-                    <div class="bg-oe-50 p-6 rounded-lg flex items-center justify-center h-28">
-                        <p class="text-lg font-serif font-medium text-oe-900 opacity-60">Google Cloud</p>
-                    </div>
-                    <div class="bg-oe-50 p-6 rounded-lg flex items-center justify-center h-28">
-                        <p class="text-lg font-serif font-medium text-oe-900 opacity-60">YouTube</p>
-                    </div>
-                    <div class="bg-oe-50 p-6 rounded-lg flex items-center justify-center h-28">
-                        <p class="text-lg font-serif font-medium text-oe-900 opacity-60">Roblox</p>
-                    </div>
-                </div>
-                
-                <!-- Testimonial -->
-                <div class="bg-oe-50 p-10 md:p-16 rounded-lg max-w-4xl mx-auto">
-                    <div class="text-oe-800 text-6xl opacity-30 mb-6">"</div>
-                    <p class="text-xl md:text-2xl font-serif text-oe-800 leading-relaxed mb-8">Allison stood up our event program from zero. Booth, developer dinner, press moment — one quarter, and the awareness numbers showed it.</p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-oe-100 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-oe-400"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-serif font-medium text-oe-700">Sarah Johnson</h4>
-                            <p class="text-sm text-oe-900">Head of Brand Marketing</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Process Section -->
-        <section class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">OUR PROCESS</p>
-                    <h2 class="text-3xl md:text-4xl font-normal mb-10 text-black">
-                        Every event runs through the same four steps — beginning to end.
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="numbered-item bg-oe-50 p-8 rounded-lg" data-number="01">
-                        <div class="relative z-10">
-                            <h3 class="font-normal text-xl mb-4 mt-6 text-oe-700">Strategy</h3>
-                            <p class="text-oe-900 leading-relaxed">Figure out what this event is supposed to do, in plain terms.</p>
-                        </div>
-                    </div>
-
-                    <div class="numbered-item bg-oe-50 p-8 rounded-lg" data-number="02">
-                        <div class="relative z-10">
-                            <h3 class="font-normal text-xl mb-4 mt-6 text-oe-700">Concept</h3>
-                            <p class="text-oe-900 leading-relaxed">Identity, look, feel — done with your brand team, not in a vacuum.</p>
-                        </div>
-                    </div>
-
-                    <div class="numbered-item bg-oe-50 p-8 rounded-lg" data-number="03">
-                        <div class="relative z-10">
-                            <h3 class="font-normal text-xl mb-4 mt-6 text-oe-700">Production</h3>
-                            <p class="text-oe-900 leading-relaxed">Vendors, budgets, timelines, and the day itself.</p>
-                        </div>
-                    </div>
-
-                    <div class="numbered-item bg-oe-50 p-8 rounded-lg" data-number="04">
-                        <div class="relative z-10">
-                            <h3 class="font-normal text-xl mb-4 mt-6 text-oe-700">Debrief</h3>
-                            <p class="text-oe-900 leading-relaxed">What worked, what didn't, what we'd do differently.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Costs of Blending In Section -->
-        <section class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-16">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-normal leading-tight mb-12">A generic event is an unforced error. The cost of blending in:</h2>
-                    </div>
-
-                    <div class="space-y-12">
-                        <div>
-                            <h3 class="flex items-center text-xl font-serif font-normal mb-3">
-                                <span class="w-8 h-8 rounded-full bg-[#d1d3b9] flex items-center justify-center mr-3">1</span>
-                                You don't get remembered
-                            </h3>
-                            <p class="text-oe-900 pl-11">Someone else owns the conversation. And the press write-up.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="flex items-center text-xl font-serif font-normal mb-3">
-                                <span class="w-8 h-8 rounded-full bg-[#d1d3b9] flex items-center justify-center mr-3">2</span>
-                                Nothing to say about you
-                            </h3>
-                            <p class="text-oe-900 pl-11">Same booth, same panel, same swag. People leave with nothing.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="flex items-center text-xl font-serif font-normal mb-3">
-                                <span class="w-8 h-8 rounded-full bg-[#d1d3b9] flex items-center justify-center mr-3">3</span>
-                                Spend that doesn't compound
-                            </h3>
-                            <p class="text-oe-900 pl-11">Every event is a one-off. The program never learns.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Solution Section -->
-        <section class="py-24 px-6 md:px-12">
-            <div class="max-w-5xl mx-auto">
-                <div class="mb-10 max-w-3xl">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">THE SOLUTION</p>
-                    <h2 class="text-3xl md:text-4xl font-normal leading-tight mb-16">
-                        An event program that compounds
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-x-16 gap-y-6">
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Get remembered without being prompted</h3>
-                    </div>
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Become a default name in the category</h3>
-                    </div>
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Make customers feel like insiders</h3>
-                    </div>
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Reach developers, executives, and policymakers</h3>
-                    </div>
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Make hard ideas legible in a room</h3>
-                    </div>
-                    <div class="border-b border-[#d1d3b9] py-6">
-                        <h3 class="font-serif text-xl">Run 20 events that all feel like the same company</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="py-20 px-6 md:px-12 bg-[#c5c6b3] text-center">
-            <div class="max-w-5xl mx-auto">
-                <div class="mx-auto max-w-3xl">
-                    <p class="text-sm uppercase tracking-widest mb-4 text-oe-700">GET STARTED</p>
-                    <h2 class="text-3xl md:text-5xl font-normal leading-tight mb-10 text-oe-900">
-                        Want to build an event program from zero?
-                    </h2>
-                </div>
-                <div class="mt-8">
-                    <a href="#contact" class="bg-white text-oe-900 px-8 py-4 inline-block rounded-full font-medium hover:bg-[#f8f9f3] transition-colors">
-                        Book an intro call
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer with Contact Section -->
-    <footer class="bg-olive-800 text-white py-16 px-6 md:px-12" id="contact">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div>
-                    <h3 class="text-2xl font-serif font-medium mb-8">Olive Events</h3>
-                    <p class="text-olive-100 max-w-md text-lg leading-relaxed mb-8">Events for technology companies. Built so people remember.</p>
-                    <div class="space-y-3">
-                        <p class="text-olive-100 flex items-center"><i class="fas fa-envelope text-oe-400 mr-3 w-5"></i> info@oliveevents.com</p>
-                        <p class="text-olive-100 flex items-center"><i class="fas fa-phone-alt text-oe-400 mr-3 w-5"></i> (555) 123-4567</p>
-                        <p class="text-olive-100 flex items-center"><i class="fas fa-map-marker-alt text-oe-400 mr-3 w-5"></i> San Francisco, California</p>
-                    </div>
-                </div>
-                
-                <!-- Contact Form Section -->
-                <div>
-                    <h3 class="text-xl font-serif font-medium mb-8">Contact Us</h3>
-                    <form>
-                        <div class="space-y-4">
-                            <div>
-                                <input type="text" placeholder="Name" class="w-full p-3 bg-olive-700 text-white placeholder-olive-400 rounded border border-olive-600 focus:border-olive-300">
-                            </div>
-                            <div>
-                                <input type="email" placeholder="Email" class="w-full p-3 bg-olive-700 text-white placeholder-olive-400 rounded border border-olive-600 focus:border-olive-300">
-                            </div>
-                            <div>
-                                <textarea placeholder="Message" rows="4" class="w-full p-3 bg-olive-700 text-white placeholder-olive-400 rounded border border-olive-600 focus:border-olive-300"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="bg-white text-olive-800 px-6 py-3 rounded-full font-medium hover:bg-olive-100 transition-colors">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="md:text-right">
-                    <h3 class="text-xl font-serif font-medium mb-8">Connect With Us</h3>
-                    <div class="flex space-x-6 md:justify-end">
-                        <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-instagram text-[#7cb518]"></i>
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                        <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-linkedin text-[#7cb518]"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                        <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-twitter text-[#7cb518]"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                        <a href="#" class="text-white hover:text-olive-200 transition-colors text-2xl">
-                            <i class="fab fa-pinterest text-[#7cb518]"></i>
-                            <span class="sr-only">Pinterest</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-olive-700 mt-12 pt-8 text-center text-olive-300 text-sm">
-                <p>&copy; 2023 Olive Events. All rights reserved.</p>
-            </div>
+        <div class="work-meta">
+          <h3 class="work-title">Crashlytics × Twitter<br/>Rooftop Reception</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Twitter</dd></div>
+            <div><dt>Format</dt><dd>Developer reception</dd></div>
+            <div><dt>Headcount</dt><dd>1,200</dd></div>
+          </dl>
         </div>
-    </footer>
+      </a>
+    </article>
 
-    <script>
-        // Simple mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('button');
-            const mobileMenu = document.createElement('div');
-            mobileMenu.classList.add('md:hidden', 'bg-white', 'absolute', 'z-50', 'w-full', 'shadow-lg', 'rounded-b-lg', 'py-4', 'px-2', 'hidden');
-            mobileMenu.style.top = '64px';
-            
-            const links = [
-                {href: '#about', text: 'About'},
-                {href: '#activations', text: 'Brand Activations'},
-                {href: '#thought-leadership', text: 'Thought Leadership'},
-                {href: '#presence', text: 'Industry Presence'},
-                {href: '#clients', text: 'Past Clients'},
-                {href: '#contact', text: 'Contact'}
-            ];
-            
-            links.forEach(link => {
-                const a = document.createElement('a');
-                a.href = link.href;
-                a.textContent = link.text;
-                a.classList.add('block', 'py-2', 'px-4', 'text-gray-700', 'hover:bg-olive-50', 'hover:text-olive-600', 'font-[200]');
-                mobileMenu.appendChild(a);
-            });
-            
-            document.querySelector('nav > div').appendChild(mobileMenu);
-            
-            menuButton.addEventListener('click', function() {
-                if (mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.remove('hidden');
-                } else {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-            
-            // Close menu when clicking a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
+    <!-- Item 2 -->
+    <article class="work-item">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event2.jpg" alt="Digits annual offsite — main stage with LED-suit performer" />
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title">Digits<br/>Annual Offsite Gala</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Digits</dd></div>
+            <div><dt>Format</dt><dd>Company offsite + gala</dd></div>
+            <div><dt>Headcount</dt><dd>320</dd></div>
+          </dl>
+        </div>
+      </a>
+    </article>
 
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-            
-            // Add subtle animations for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL without page jump
-                        history.pushState(null, null, targetId);
-                    }
-                });
-            });
+    <!-- Item 3 -->
+    <article class="work-item">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event3.jpg" alt="Fiorella restaurant opening — long table set with pink and yellow florals" />
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title">Fiorella<br/>Brand Opening Dinner</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Fiorella</dd></div>
+            <div><dt>Format</dt><dd>Press &amp; press-adjacent dinner</dd></div>
+            <div><dt>Headcount</dt><dd>48</dd></div>
+          </dl>
+        </div>
+      </a>
+    </article>
 
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('opacity-100', 'translate-y-0');
-                        entry.target.classList.remove('opacity-0', 'translate-y-10');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            // Apply fade-in animation to section headers and cards
-            document.querySelectorAll('section h2, .card, .numbered-item, .group').forEach(el => {
-                el.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
-                observer.observe(el);
-            });
-        });
-    </script>
+    <!-- Item 4 -->
+    <article class="work-item">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event4.jpg" alt="Holiday celebration — red-lit ballroom with disco-ball garland" />
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title">Digits<br/>Holiday Program</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Digits</dd></div>
+            <div><dt>Format</dt><dd>Holiday celebration</dd></div>
+            <div><dt>Headcount</dt><dd>240</dd></div>
+          </dl>
+        </div>
+      </a>
+    </article>
+
+    <!-- Item 5 -->
+    <article class="work-item">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event5.jpg" alt="Digits conference booth at AWS re:Invent — Autonomous General Ledger" />
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title">Digits at AWS re:Invent<br/>Conference Presence</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Digits</dd></div>
+            <div><dt>Format</dt><dd>Booth + side programming</dd></div>
+            <div><dt>Headcount</dt><dd>~50,000 floor</dd></div>
+          </dl>
+        </div>
+      </a>
+    </article>
+
+    <!-- Item 6 — large -->
+    <article class="work-item work-item--lg">
+      <a href="#" class="work-card">
+        <div class="work-photo">
+          <img src="images/event6.jpg" alt="Digits at Digital CPA 2021 — green-lit cocktail reception" />
+        </div>
+        <div class="work-meta">
+          <h3 class="work-title">Digits at Digital CPA<br/>Customer Reception</h3>
+          <dl class="work-spec">
+            <div><dt>Client</dt><dd>Digits</dd></div>
+            <div><dt>Format</dt><dd>Customer cocktail reception</dd></div>
+            <div><dt>Headcount</dt><dd>180</dd></div>
+          </dl>
+        </div>
+      </a>
+    </article>
+  </div>
+
+  <div class="work-foot">
+    <a href="#contact" class="link-arrow">
+      <span>More work on request</span>
+      <svg viewBox="0 0 24 16" width="28" height="14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 8h22M16 2l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     03 · PRACTICES
+     ============================================================ -->
+<section id="services" class="services">
+  <header class="section-head section-head--catalog">
+    <div class="section-eyebrow"><span class="tag-no">03</span><span>Practices</span></div>
+    <h2 class="section-title section-title--centered">Three practices. One <em>opinionated</em> studio.</h2>
+  </header>
+
+  <div class="services-grid">
+
+    <article class="service">
+      <div class="svc-num">A.</div>
+      <h3 class="svc-title">Brand Activations</h3>
+      <p class="svc-lede">
+        Events you own — small dinners to flagship moments — built so the audience leaves with something specific to say about you.
+      </p>
+      <ul class="svc-list">
+        <li><span class="svc-bullet">○</span>Concept &amp; creative direction</li>
+        <li><span class="svc-bullet">○</span>Spaces, stages &amp; environments</li>
+        <li><span class="svc-bullet">○</span>Vendor &amp; agency orchestration</li>
+        <li><span class="svc-bullet">○</span>Production through load-out</li>
+        <li><span class="svc-bullet">○</span>Playbooks for internal teams</li>
+        <li><span class="svc-bullet">○</span>Measurement &amp; debrief</li>
+      </ul>
+    </article>
+
+    <article class="service">
+      <div class="svc-num">B.</div>
+      <h3 class="svc-title">Thought Leadership</h3>
+      <p class="svc-lede">
+        Smaller, sharper events where the people in the room actually have something to say. Built with comms and policy, not around them.
+      </p>
+      <ul class="svc-list">
+        <li><span class="svc-bullet">○</span>Executive roundtables</li>
+        <li><span class="svc-bullet">○</span>Policy &amp; government sessions</li>
+        <li><span class="svc-bullet">○</span>Technical deep-dives</li>
+        <li><span class="svc-bullet">○</span>Press &amp; analyst briefings</li>
+        <li><span class="svc-bullet">○</span>Customer dinners</li>
+        <li><span class="svc-bullet">○</span>Editorial &amp; on-record formats</li>
+      </ul>
+    </article>
+
+    <article class="service">
+      <div class="svc-num">C.</div>
+      <h3 class="svc-title">Industry Presence</h3>
+      <p class="svc-lede">
+        When your audience is already at a conference, the question is whether they leave talking about you, or talking about somebody else.
+      </p>
+      <ul class="svc-list">
+        <li><span class="svc-bullet">○</span>Sponsorship strategy</li>
+        <li><span class="svc-bullet">○</span>Booth design &amp; build</li>
+        <li><span class="svc-bullet">○</span>Side events &amp; off-program dinners</li>
+        <li><span class="svc-bullet">○</span>Attendee engagement programs</li>
+        <li><span class="svc-bullet">○</span>Speaker prep &amp; talent</li>
+        <li><span class="svc-bullet">○</span>On-floor staffing</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     04 · APPROACH
+     ============================================================ -->
+<section id="approach" class="approach">
+  <header class="section-head section-head--catalog">
+    <div class="section-eyebrow"><span class="tag-no">04</span><span>Approach</span></div>
+    <h2 class="section-title section-title--centered">A few things we <em>refuse</em> to negotiate.</h2>
+    <p class="section-sub section-sub--centered">A generic event is an unforced error. Below are the opinions that keep one from happening on our watch.</p>
+  </header>
+
+  <ol class="approach-list">
+    <li class="approach-item">
+      <div class="ap-no">i.</div>
+      <h3 class="ap-title">Strategy before vendors.</h3>
+      <p class="ap-body">No one calls a fabricator until we agree, in writing, what the event is supposed to do. The brief is a one-pager. If it can't be one page, we don't have a brief yet.</p>
+    </li>
+    <li class="approach-item">
+      <div class="ap-no">ii.</div>
+      <h3 class="ap-title">Built with your brand team, not around it.</h3>
+      <p class="ap-body">If the room doesn't look like a glance at your homepage, we did something wrong. Brand, comms, and policy are in the kickoff — not the debrief.</p>
+    </li>
+    <li class="approach-item">
+      <div class="ap-no">iii.</div>
+      <h3 class="ap-title">Spend that compounds.</h3>
+      <p class="ap-body">Every event leaves a playbook behind. The fifth event of a program should be a third the cost and twice as good — or we missed something.</p>
+    </li>
+    <li class="approach-item">
+      <div class="ap-no">iv.</div>
+      <h3 class="ap-title">Measure what actually moved.</h3>
+      <p class="ap-body">Recall, sentiment, pipeline, hiring. Pick the metric that matters before the invitation goes out; report against it within ten days of load-out.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ============================================================
+     05 · ABOUT
+     ============================================================ -->
+<section id="about" class="about">
+  <div class="about-image" aria-hidden="true">
+    <div class="portrait-placeholder">
+      <span class="ph-label">portrait — Allison Fox</span>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-tag"><span class="tag-no">05</span><span>Principal</span></div>
+    <h2 class="section-title">Allison Fox.</h2>
+    <p class="about-body">
+      Fifteen-plus years building events for technology companies and the agencies that work with them. The range goes from a twelve-person dinner to a five-thousand-person keynote — <em>and the playbooks that hold both to the same standard.</em>
+    </p>
+    <p class="about-body">
+      She works closely with brand, comms, and policy partners, and runs both full-time and contracted teams. She is opinionated about budgets, timelines, and what good looks like on a show floor.
+    </p>
+    <dl class="about-facts">
+      <div><dt>Based</dt><dd>San Francisco</dd></div>
+      <div><dt>Travels</dt><dd>Globally</dd></div>
+      <div><dt>Reports to</dt><dd>You</dd></div>
+      <div><dt>Says no to</dt><dd>Anything generic</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 · CLIENTS
+     ============================================================ -->
+<section id="clients" class="clients">
+  <div class="section-tag"><span class="tag-no">06</span><span>Selected clients</span></div>
+
+  <ul class="clients-list clients-view clients-view--type">
+    <li>Digits</li>
+    <li>Okta</li>
+    <li>Google Cloud</li>
+    <li>YouTube</li>
+    <li>Roblox</li>
+    <li>Twitter</li>
+    <li>Crashlytics</li>
+    <li>+ studios &amp; agencies under NDA</li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     07 · CONTACT
+     ============================================================ -->
+<section id="contact" class="contact">
+  <div class="contact-lockup">
+    <div class="section-tag"><span class="tag-no">07</span><span>Start a project</span></div>
+    <h2 class="contact-headline">
+      Building an event<br/>program from <em>zero?</em><br/>
+      <span class="contact-sub">Or fixing one that isn't compounding?</span>
+    </h2>
+    <a href="mailto:hello@olive-events.com" class="contact-email">
+      <span>hello@olive-events.com</span>
+      <svg viewBox="0 0 24 16" width="32" height="16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 8h22M16 2l6 6-6 6"/></svg>
+    </a>
+    <div class="contact-meta">
+      <div><span class="meta-key">Principal</span><span class="meta-val">Allison Fox</span></div>
+      <div><span class="meta-key">Studio</span><span class="meta-val">San Francisco, CA</span></div>
+      <div><span class="meta-key">Response</span><span class="meta-val">Within 48 hours</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="foot-mark">
+    <span class="mark-glyph" aria-hidden="true">
+      <svg viewBox="0 0 30 38" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" fill-rule="evenodd" d="M1,19 A14,18 0 1,0 29,19 A14,18 0 1,0 1,19 Z M3,19 A12,17 0 1,0 27,19 A12,17 0 1,0 3,19 Z"/>
+        <ellipse class="pimento" cx="17" cy="10" rx="2.5" ry="4.5" transform="rotate(-30 17 10)"/>
+      </svg>
+    </span>
+    <span class="foot-label"><b>Olive</b><span class="foot-dot">·</span><span class="foot-evt">Events</span></span>
+  </div>
+  <div class="foot-col">
+    <span class="foot-key">Index</span>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#approach">Approach</a>
+    <a href="#about">About</a>
+  </div>
+  <div class="foot-col">
+    <span class="foot-key">Contact</span>
+    <a href="mailto:hello@olive-events.com">hello@olive-events.com</a>
+    <span>San Francisco · CA</span>
+  </div>
+  <div class="foot-col foot-col--right">
+    <span class="foot-key">© 2026</span>
+    <span>Olive Events LLC</span>
+    <span>All rights reserved</span>
+  </div>
+</footer>
+
 </body>
-</html> 
+</html>
