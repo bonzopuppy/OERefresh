@@ -442,9 +442,10 @@ body.hero-centered .hero-photo {
 body.hero-centered .hero-photo::after {
   content: "";
   position: absolute; inset: 0;
-  /* Heavier wash at the bottom where the type now sits */
+  /* Clean fade — transparent through the upper half, ramping to a soft
+     black scrim at the bottom so the headline reads cleanly */
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.04) 32%, rgba(0,0,0,0.18) 62%, rgba(0,0,0,0.55) 100%);
+    linear-gradient(180deg, transparent 0%, transparent 10%, rgba(0,0,0,0.8) 100%);
   pointer-events: none;
 }
 body.hero-centered .hero-photo img { filter: saturate(1.06) contrast(1.03); }
@@ -1896,7 +1897,7 @@ body.display-yanone-sentence .wwd-body {
   max-width: min(1100px, 84vw);
 }
 body.display-yanone-sentence .clients-list {
-  font-size: clamp(48px, 8vw, 120px);
+  font-size: clamp(40px, 6.4vw, 96px);
   letter-spacing: -0.005em;
 }
 body.display-yanone-sentence .manifesto-body {
@@ -1971,9 +1972,11 @@ body.display-yanone-sentence .contact-sub {
   letter-spacing: -0.005em;
 }
 
-/* Clients-list last item already italic Instrument Serif — no
-   change needed but make sure the sentence override doesn't undo it */
+/* Clients-list last item — Yanone sentence case (no italic serif)
+   to match the rest of the sentence variant. */
 body.display-yanone.display-yanone-sentence .clients-list li:last-child {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-style: normal;
   font-weight: 400;
 }
 
