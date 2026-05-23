@@ -33,7 +33,7 @@ em, i { font-style: italic; }
 :root {
   --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: 'Instrument Serif', 'Fraunces', ui-serif, Georgia, serif;
-  --font-mono: ui-monospace, 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Menlo', monospace;
 
   --shell-pad-x: clamp(20px, 4vw, 64px);
   --shell-pad-y: clamp(40px, 6vw, 96px);
@@ -103,7 +103,7 @@ body.palette-noir {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 32px;
-  height: 72px;
+  height: 96px;
   background: color-mix(in srgb, var(--bone) 92%, transparent);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
@@ -248,8 +248,8 @@ body.palette-noir {
 .lockup .wm-gap { display: inline-block; width: 0.24em; }
 .lockup .wm-events { color: var(--ink); }
 
-.lockup--nav    { font-size: 22px; }
-.lockup--footer { font-size: 32px; }
+.lockup--nav    { font-size: 40px; }
+.lockup--footer { font-size: 44px; }
 
 /* ============================================================
    HERO
@@ -668,10 +668,10 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: var(--tracker-wide);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.04em;
   color: var(--mute);
   margin-bottom: 24px;
 }
@@ -712,10 +712,10 @@ section { padding-top: var(--shell-pad-y); padding-bottom: var(--shell-pad-y); }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: var(--tracker-wide);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.04em;
   color: var(--mute);
 }
 .section-eyebrow .tag-no { color: var(--pimento); font-weight: 500; }
