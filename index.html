@@ -375,5 +375,48 @@
   </div>
 </footer>
 
+<script>
+  // Reveal-on-scroll. Cheap IntersectionObserver, compositor-only transitions.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    const TARGETS = [
+      '.wwd-inner',
+      '.work .section-head',
+      '.work-item',
+      '.services .section-head',
+      '.service',
+      '.approach .section-head',
+      '.approach-item',
+      '.about-image',
+      '.about-text',
+      '.clients .section-tag',
+      '.clients-list',
+      '.contact .section-tag',
+      '.contact-headline',
+      '.contact-email',
+      '.contact-meta',
+      '.footer'
+    ];
+
+    const els = document.querySelectorAll(TARGETS.join(','));
+    els.forEach(el => el.classList.add('reveal'));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.05
+    });
+
+    els.forEach(el => io.observe(el));
+  })();
+</script>
 </body>
 </html>
